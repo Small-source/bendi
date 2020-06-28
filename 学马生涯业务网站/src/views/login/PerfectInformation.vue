@@ -8,7 +8,7 @@
                     <!-- 所在地 -->
                     <div class="linkage" v-if="openProvinceData.length == 0">
                         <div class="zheceng" v-if="tuance"></div>
-                        <p class="no1">所在地：</p>
+                        <p class="no1"  style="width: 80px">地<span style="opacity:0">空空</span>区：</p>
                         <div class="el">
                             <el-select
                                 v-model="province"
@@ -57,7 +57,7 @@
                     </div>
                     <div class="linkage" v-if="openProvinceData.length > 0">
                         <div class="zheceng" v-if="tuance"></div>
-                        <p class="no1">所在地：</p>
+                        <p class="no1"  style="width: 80px">地<span style="opacity:0">空空</span>区：</p>
                         <div class="el">
                             <el-select
                                 v-model="province"
@@ -106,13 +106,13 @@
                     <!-- 学校 -->
                     <div class="xuexiao" :style="{marginBottom:tuance&&'25px'}">
                         <div class="zheceng" v-if="tuance"></div>
-                        <p class="no1">学&nbsp;&nbsp;&nbsp;校：</p>
+                        <p class="no1" style="width: 80px">学<span style="opacity:0">空空</span>校：</p>
                         <input type="text" v-model="school" placeholder="请输入学校的名称" onfocus="placeholder=''" onblur="placeholder='请输入学校的名称'">
                     </div>
                     <!-- 高考年份 -->
                     <div class="year" :style="{marginBottom:tuance&&'25px'}">
                         <div class="zheceng" v-if="tuance"></div>
-                        <p class="no1">年&nbsp;&nbsp;&nbsp;级：</p>
+                        <p class="no1" style="width: 80px">高考年份：</p>
                         <el-select v-model="year" class="year1" slot="prepend" placeholder="请选择">
                             <el-option :label="years+item-1" :value="years+item-1" v-for="item in 6"></el-option>
                             <el-option label="成年人" value="成年人"></el-option>
@@ -122,23 +122,23 @@
                     </div>
                     <!-- 班级 -->
                     <div class="ownname" v-if="tuance" :style="{marginBottom:tuance&&'25px'}">
-                        <p class="no1">班&nbsp;&nbsp;&nbsp;级：</p>
+                        <p class="no1" style="width: 80px">班<span style="opacity:0">空空</span>级：</p>
                         <el-select v-model="classNumber" class="classNumber" slot="prepend" placeholder="请选择">
                             <el-option  :label="start+item-1" :value="start+item-1" v-for="item  in  end-start+1"></el-option>
                         </el-select>
                     </div>
                     <!-- 姓名 -->
                     <div class="ownname" :style="{marginBottom:tuance&&'25px'}">
-                        <p class="no1">姓&nbsp;&nbsp;&nbsp;名：</p>
+                        <p class="no1" style="width: 80px">姓<span style="opacity:0">空空</span>名：</p>
                         <input type="text" v-model="ownname" placeholder="请输入你的姓名" onfocus="placeholder=''" onblur="placeholder='请输入你的姓名'">
                     </div>
                     <!-- 请输入手机号-->
                     <div class="ownname" v-if="tuance" :style="{marginBottom:tuance&&'25px'}">
-                        <p class="no1">手&nbsp;&nbsp;&nbsp;机：</p>
+                        <p class="no1" style="width: 80px">手<span style="opacity:0">空空</span>机：</p>
                         <input type="number" v-model="phone" placeholder="请输入你的手机号" onfocus="placeholder=''" onblur="placeholder='请输入你的手机号'">
                     </div>
                     <div class="sex">
-                        <p class="no1">性&nbsp;&nbsp;&nbsp;别：</p>
+                        <p class="no1" style="width: 80px">性<span style="opacity:0">空空</span>别：</p>
                         <div class="el">
                             <el-radio-group v-model="sex">
                                 <el-radio :label="1">男</el-radio>
@@ -823,10 +823,7 @@ export default {
             var year=date.getFullYear();
             var mounth=date.getMonth()+1;
             var day=date.getDate();
-            if(mounth>=7){
-                year+=1
-            }
-            if(mounth==6&&day>=7){
+            if(mounth>=9){
                 year+=1
             }
             this.years=year;
