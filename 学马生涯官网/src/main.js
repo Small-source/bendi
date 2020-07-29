@@ -8,7 +8,6 @@ import axios from 'axios'
 Vue.prototype.$ajax= axios;
 // Vue.prototype.G_uri= 'http://39.98.37.134:8002';
 Vue.prototype.G_uri= 'http://www.xuematech.com/papi';
-
 Vue.use(MetaInfo)
 Vue.config.productionTip = false
 // router.afterEach((to, from, next) => {
@@ -17,6 +16,8 @@ Vue.config.productionTip = false
 //   window.scrollTo(0, 0)
 // })
 // Vue.prototype.G_uri= '/api';
+
+
 new Vue({
   router,
   store,

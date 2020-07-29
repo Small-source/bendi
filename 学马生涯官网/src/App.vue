@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<div class="header-nav">
+		<div class="header-nav" v-show="$route.path!='/attractInvestment/'||isShowNav">
 			<div class="inner">
 				<h1 class="logos">
 				  <a href="/home" title="学马">
@@ -55,9 +55,8 @@
 										<router-link tag="li" to="/xingaokao"><span>校园解决方案</span></router-link>
 									</ul>
 								</div>
-							</div>	
+							</div>
 						</div>
-
 					</li>
 					<li class="lis">
 						<a href="/vipEscort" class="bigLink"><span :class="selection==='vipEscort' ? 'select' : ''">VIP护航计划</span></a>
@@ -66,7 +65,7 @@
 						<a href="/xuemaNews" class="bigLink"><span :class="selection==='xuemaNews' ? 'select' : ''">学马资讯</span></a>
 					</li>
 					<li class="lis">
-						<a href="/attractInvestment" class="bigLink"><span :class="selection==='attractInvestment' ? 'select' : ''">招商合作</span></a>
+						<a href="/attractInvestment/" class="bigLink"><span :class="selection==='attractInvestment' ? 'select' : ''">招商合作</span></a>
 					</li>
 					<li class="lis">
 						<a href="/aboutus/jianjie" class="bigLink"><span :class="selection==='aboutus' ? 'select' : ''">关于我们</span></a>
@@ -78,7 +77,7 @@
 		<keep-alive>
             <router-view v-if="$route.meta.keepAlive" ></router-view>
         </keep-alive>
-		<router-view  v-if="!$route.meta.keepAlive"></router-view>
+		<router-view  v-if="!$route.meta.keepAlive" @changNav="changNav"></router-view>
 		<!-- 底部导航栏 -->
 		<div class="footerNav" v-show="showNav()">
 			<div class="inner">
@@ -137,9 +136,9 @@
 					<p class="ft_title">学马资讯</p>
 					<ul>
 						<li v-for="(item, index) in z_newsData" :key="index" @click="goNewsDetail(item.id)">{{item.title}}</li>
-						
+
 					</ul>
-				</div> 
+				</div>
 			</div>
 		</div>
 		<!-- 最底部公网安备 -->
@@ -162,7 +161,7 @@
   // font-family: "Microsoft YaHei",Verdana,Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 52px; 
+  padding-top: 52px;
 }
 .inner {
   width: 1200px;
@@ -516,7 +515,7 @@
 			}
 
 		}
-		
+
  	}
  	.guanyuwomen {
 		float: left;
@@ -554,7 +553,7 @@
   text-align: center;
   height: 60px;
   line-height: 60px;
-  letter-spacing: 0.5px; 	
+  letter-spacing: 0.5px;
   color: #ffffff;
   background-color: #333436;
   font-size: 12px;
@@ -575,10 +574,15 @@ export default {
 			CityAddress: [{ city: '上海', cityId: 0 }, { city: '北京', cityId: 1 }, { city: '湖南', cityId: 2 }, { city: '四川', cityId: 3 }, { city: '河南', cityId: 4 }],
 			address: ['上海市普陀区金沙江路1997弄金环商务花园8号栋3楼', '北京市海淀区北清路68号院24号楼 d座3层509', '湖南省长沙市开福区万达广场写字楼a座24楼', '四川省成都市高新区府城大道399号天府新谷12楼', '河南郑州市花园路国贸360大厦A座14楼'],
 			selection: '',
-			z_newsData: []
+			z_newsData: [],
+			isShowNav: true
 		}
 	},
 	methods: {
+		changNav(value) {
+			this.isShowNav = value;
+			// console.log(value)
+		},
 		change(index) {
 			this.idx = index;
 		},
@@ -621,17 +625,17 @@ export default {
         },
         goNewsDetail(id) {
         	var id = id;
-            this.$router.push({  
-                path: '/newsDetail',   
-                query: {  
-                    id: id,    
-                }  
-            }) 
-            window.scroll(0, 0); 
+            this.$router.push({
+                path: '/newsDetail',
+                query: {
+                    id: id,
+                }
+            })
+            window.scroll(0, 0);
         },
         checkData() {
         	if(window.sessionStorage.getItem('z_newsData')) {
-        		this.z_newsData =JSON.parse(window.sessionStorage.getItem('z_newsData')); 
+        		this.z_newsData =JSON.parse(window.sessionStorage.getItem('z_newsData'));
         	}else {
         		this.getNews();
         	}
@@ -642,7 +646,7 @@ export default {
 	//     handler: function(val, oldVal){
 	//     console.log(val);
 	//   }
-	// } 
+	// }
 	watch: {
 		$route: {
 			handler: function(val, oldVal) {
@@ -707,6 +711,7 @@ export default {
 		this.checkData();
 	},
 	created() {
+		console.log(this.$route.path)
 		let path1 = this.$route.path.slice(1);
 		switch (path1) {
 			case '':

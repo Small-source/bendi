@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  	recruitScrollY:0 
+  	recruitScrollY:0
   },
   getters: { 
  	recruitScrollY:state => state.recruitScrollY 

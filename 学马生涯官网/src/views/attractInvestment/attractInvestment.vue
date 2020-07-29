@@ -3,14 +3,20 @@
     <div class="attract_investment">
         <div class="banner">
         </div>
+        <div class="content_detail">
+            <p><span>4周</span>打造规划师核心服务能力</p>
+            <p>人才培养更加高效</p>
+        </div>
         <!-- 免费获取测试账号 -->
         <div class="free_getting_accounts">
             <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">免费获取测试账号</li>
-                    <li class="foot"></li>
-                </ul>
+                <div class="big_title">
+                    马上获取试用账号
+                </div>
+                <div class="title_detail"></div>
+                <p class="baoming">
+                    已经有<span>1467</span>人预约报名
+                </p>
                 <p class="remind" :style="{color: isSuccess ? '#3492f9': 'red'}">{{remind}}</p>
                 <div class="input_phone">
                     <input type="text" placeholder="请输入您的姓名"  onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的姓名'" class="username" v-model="free_name" maxlength="10">
@@ -27,210 +33,361 @@
                                     <p>{{item.name}}</p><p>{{item.phone}}</p><p>{{item.time}}</p>
                                 </swiper-slide>
                             </swiper>
-                     </div>    
-                </div>
-            </div>
-        </div>   
-        <!-- 市场前景 -->
-        <div class="market_prospect">
-           <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">市场前景</li>
-                    <li class="foot"></li>
-                </ul>
-                <div class="introduce">升学刚需，新高考改革催生新的蓝海市场，蕴藏无限商机</div>
-                <ul class="content">
-                    <li class="main_box" v-for="(item,index) in market_prospect" :key="index">
-                        <div class="img_box">
-                            <img :src="item.imgUrl" alt="">
-                        </div>
-                        <p class="main_title">{{item.title}}</p>
-                        <p class="main_detail">{{item.detail}}</p>
-                    </li>
-                </ul>
-           </div>
-        </div>
-        <!-- 学马三大优势 -->
-        <div class="three_advantages">
-            <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">学马三大优势</li>
-                    <li class="foot"></li>
-                </ul>
-                <div class="introduce">提供个性化的升学规划解决方案</div>
-                <div class="content">
-                    <ul class="list">
-                        <li v-for="(item,index) in three_advantages" :key="index" :style="'background: url(' + item.imgUrl + ') no-repeat'">
-                            <p class="title">
-                                {{item.title}}
-                            </p>
-                            <p class="detail">
-                                {{item.detail}}
-                            </p>
-                        </li>
-                    </ul>
-                    <ul class="foot_num">
-                        <li>将近<span>10</span>年的发展</li>
-                        <li>覆盖<span>20</span>个省份</li>
-                        <li><span>300+</span>人服务团队</li>
-                        <li>辅导<span>10000+</span>名中学生</li>
-                    </ul>
+                     </div>
                 </div>
             </div>
         </div>
-        <!-- 五、雄厚的师资力量 -->
-        <div class="famouse_teachers">
+        <!-- 政策背景 -->
+        <div class="zhengcebeijing">
             <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">雄厚的师资力量</li>
-                    <li class="foot"></li>
-                </ul>
-                <div class="introduce">汇聚顶尖名校师资力量，线上线下开展全面辅导</div>
-                <div class="card">
-                    <ul class="card_list" :style="{marginLeft : famouseTeachersCardStyle + 'px'}">
-                        <li v-for="(item, index) in famouse_teachers" :key="index">
-                            <div class="img_box">
-                                <img :src="item.imgUrlTeacher" alt="">
-                            </div>
-                            <div class="right">
-                                <div class="type">{{item.type}}</div>
-                                <p class="title">{{item.title}}</p>
-                                <p class="university">{{item.university}}</p>
-                                <p class="detail">{{item.detail}}</p>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="big_title">
+                    政策背景
                 </div>
-                <div class="bottom">
-                    <div class="content_main">
-                        <ul class="lis_main" :style="{marginLeft : famouseTeachersStyle + 'px'}">
-                            <li v-for="(item, index) in  famouse_teachers" :key="index">
-                                <div :class="famouseTeachersIndex == index ? 'active_img' : 'img_box'"  @click="changeTeachersCard(index)">
-                                    <img :src="item.imgUrl" alt="" >
-                                </div>
-                                <p class="title">{{item.title}}</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="btn">
-                        <div class="btn_left" :class="famouseTeachersIndex > 0 ? 'active_left' : ''"  @click="changeFamouseTeachers(1)"></div>
-                        <div class="btn_right" :class="famouseTeachersIndex < (famouse_teachers.length - 1) ? 'active_right' : ''" @click="changeFamouseTeachers(-1)"></div>
-                    </div>
-                </div>
-                <div class="circle">
-                    
-                </div>
-                <div class="btn_more">了解更多学马教育</div>
-            </div>
-        </div>
-        <!-- 六、学马教育品牌优势 -->
-        <div class="brand_advantage">
-            <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">学马教育品牌优势</li>
-                    <li class="foot"></li>
-                </ul>
-                <ul class="content">
-                    <li v-for="(item, index) in brand_advantage" :key="index">
-                        <div class="img_box">
-                            <img :src="item.imgUrl" alt="">
-                        </div>
-                        <p class="title">{{item.title}}</p>
-                    </li>
-                </ul>
-            </div>
+                <ul class="lis">
+                    <li>
+                        <p class="year">2013年</p>
+                        <p>《中共中央关于全面深化改革若干重大问题的决定》</p>
 
-        </div>
-        <!-- 七、全方位运营支持保障 -->
-        <div class="yunying">
-            <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">全方位运营支持保障</li>
-                    <li class="foot"></li>
+                    </li>
+                    <li>
+                        <p class="year">2014年</p>
+                        <p>《国务院关于深化考试招生制度改革的实施意见》</p>
+                    </li>
+                    <img src="/imgs/attractInvestment/arrow.png" alt="">
                 </ul>
-                 <ul class="content">
-                    <li v-for="(item, index) in yunying" :key="index">
-                        <div class="main">
-                            <p class="title">{{item.title}}</p>
-                            <p class="detail">{{item.detail}}</p>
-                        </div>    
+                <p class="biao">新高考改革时间表</p>
+                <ul class="biao_box">
+                    <li>
+                        <p class="year">2014年</p>
+                        <p class="dian"></p>
+                        <p class="title">第一批</p>
+                        <p class="detail">浙江、上海</p>
+                    </li>
+                    <li>
+                        <p class="detail">北京、天津</p>
+                        <p class="detail">山东、海南</p>
+                        <p class="title">第二批</p>
+                        <p class="dian"></p>
+                        <p class="year">2017年</p>
+                    </li>
+                    <li>
+                        <p class="year">2018年</p>
+                        <p class="dian"></p>
+                        <p class="title">第三批</p>
+                        <p class="detail">江苏、湖北</p>
+                        <p class="detail">福建、辽宁</p>
+                        <p class="detail">重庆、河北</p>
+                        <p class="detail">湖南、广东</p>
+                    </li>
+                    <li>
+                        <p class="detail">陕西、甘肃</p>
+                        <p class="detail">宁夏、广西</p>
+                        <p class="detail">安徽、江西</p>
+                        <p class="detail">内蒙古、辽宁</p>
+                        <p class="detail">黑龙江、吉林</p>
+                        <p class="detail">贵州、西藏</p>
+                        <p class="title">第四批</p>
+                        <p class="dian"></p>
+                        <p class="year">2019年</p>
+                    </li>
+                    <li>
+                        <p class="title">...</p>
                     </li>
                 </ul>
             </div>
         </div>
-        <!-- 八、合作伙伴生态圈 -->
-        <div class="cooperation">
-            <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">合作伙伴生态圈</li>
-                    <li class="foot"></li>
-                </ul>
-                <ul class="content">
-                    <li v-for="(item, index) in cooperation" :key="index" :style="'background: url(' + item.imgUrl + ') no-repeat'">
-                        <p class="title">{{item.title}}</p>
-                        <p class="detail">{{item.detail}}</p>
-                    </li>
-                </ul>
+        <div class="guimo">
+            <div class="title_box">
+                新高考市场规模
             </div>
-        </div>
-        <!-- 合作伙伴风采 -->
-        <div class="partnership">
             <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">合作伙伴风采</li>
-                    <li class="foot"></li>
-                </ul>
                 <div class="content">
-                    <div class="content_main">
-                        <ul class="lis_main" :style="{marginLeft : partnershipStyle + 'px'}">
-                            <li v-for="(item, index) in  partnership" :key="index">
-                                <img :src="item.imgUrl" alt="">
-                                <p class="title">{{item.title}}</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="btn">
-                        <div class="btn_left" :class="partnershipIndex > 0 ? 'active_left' : ''"  @click="changePartnership(1)"></div>
-                        <div class="btn_right" :class="partnershipIndex < (partnership.length - 1) ? 'active_right' : ''" @click="changePartnership(-1)"></div>
-                    </div>
-                    <ul class="circle">
-                        <li v-for="(item, index) in partnership.length - 3" :class="index == partnershipIndex ? 'active' : ''"></li>
+                    <ul>
+                        <li>2019年高考报考人数突破<span>1031</span>万人！</li>
+                        <li>生涯规划、强基综评、志愿填报市场规模<span>20</span>亿！</li>
                     </ul>
                 </div>
-                <div class="btn_more">了解更多学马教育</div>
-            </div>
-        </div>  
-        <!-- 加盟咨询 -->
-        <div class="join_consultation">
-            <div class="inner">
-                <ul class="title_box">
-                    <li class="top"></li>
-                    <li class="title">加盟咨询</li>
-                    <li class="foot"></li>
+                <ul class="lis_mid">
+                    <li>
+                        <p>全国高中生</p>
+                        <p>在校人数<span>3000</span>万</p>
+                    </li>
+                    <li>
+                        <p><span>5%</span>选择</p>
+                        <p>付费咨询</p>
+                    </li>
+                    <li>
+                        <p>咨询单价</p>
+                        <p><span>2000元/人</span></p>
+                    </li>
                 </ul>
-                <div class="join_mian">
-                    <div class="join_card">
-                        <div class="title">加盟咨询</div>
-                        <div class="check_box">
-                            <p>我想了解：</p>
-                            <p><span @click="checkd_type = 1" :class="checkd_type == 1 ? 'active' : ''">√</span>加盟费用</p>
-                            <p><span @click="checkd_type = 2" :class="checkd_type == 2 ? 'active' : ''">√</span>加盟模式</p>
-                            <p><span @click="checkd_type = 3" :class="checkd_type == 3 ? 'active' : ''">√</span>其他问题</p>
+            </div>
+        </div>
+        <div class="yuji">
+            <p>预计2020年中学生咨询规划市场消费规模</p>
+            <p>将达到<span>3000亿</span></p>
+        </div>
+        <div class="guihua">
+            <div class="title_box">
+                <p><span>学马</span></p>
+                <p>新高考背景下的升学规划</p>
+            </div>
+            <div class="inner">
+                <div class="content">
+                    <ul class="lis">
+                        <li>
+                            <p>探索方向</p>
+                            <p>认识自我</p>
+                            <p>确立目标</p>
+                        </li>
+                        <li>
+                            <p>调整方向</p>
+                            <p>打造优势</p>
+                            <p>提升能力</p>
+                        </li>
+                        <li>
+                            <p>多元升学</p>
+                            <p>冲刺高考</p>
+                            <p>梦想成真</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="title_lis">
+                    <li>高一</li>
+                    <li>高二</li>
+                    <li>高三</li>
+                </ul>
+            </div>
+        </div>
+        <div class="resolve">
+            <div class="inner">
+                <div class="title_box">
+                    <p><span>学马</span></p>
+                    <p>升学解决方案</p>
+                </div>
+                <ul class="yuan">
+                    <li>
+                        <p>服务支撑<br/>体系</p>
+                    </li>
+                    <li>
+                        <p>工具系统<br/>体系</p>
+                    </li>
+                    <li>
+                        <p>课程内容<br/>体系</p>
+                    </li>
+                </ul>
+                <ul class="title_lis">
+                    <li>认识自我</li>
+                    <li>探索外部世界</li>
+                    <li>明确方向</li>
+                    <li>设定目标</li>
+                    <li>行动方案</li>
+                    <li>生涯评估</li>
+                </ul>
+                <ul class="ft_lis">
+                    <li>方向定位</li>
+                    <li>目标设定</li>
+                    <li>通路设计与背景提升</li>
+                    <li>升学备考</li>
+                </ul>
+            </div>
+        </div>
+        <div class="youshi">
+            <div class="youshi1">
+                <div class="inner">
+                    <div class="big_title">
+                        学马三大优势
+                    </div>
+                    <div class="s_title">工具系统体系</div>
+                    <div class="content">
+                        <div class="left">
+                            <img src="/imgs/attractInvestment/gjtx.png" alt="">
                         </div>
-                        <div class="join_inputs">
-                            <p><span>姓名：</span><input type="text" placeholder="您的姓名" v-model="join_name"></p>
-                            <p><span>手机：</span><input type="number" placeholder="您的联系手机" v-model="join_phonenumber"></p>
-                            <p class="input_textarea"><span>留言：</span><textarea cols="32" rows="10" v-model="join_message" maxlength="200" placeholder="在线留言描述(请不要超过200字)" onfocus="this.placeholder = ''"  onblur="this.placeholder = '在线留言描述(请不要超过200字)'"></textarea></p>
-                            <p class="join_remind" :style="{color: isSuccessJoin ? '#3492f9': 'red'}">{{join_remind}}</p>
-                            <div class="btn" @click="getJoinMessage">立即加盟</div>
+                        <div class="right">
+                            <div class="box">
+                                <p class="title"><span>3</span>大产品</p>
+                                <p>生涯发展管理平台</p>
+                                <p>代理商官网</p>
+                                <p>小程序</p>
+                            </div>
+                            <div class="box">
+                                <p class="title"><span>8</span>大系统</p>
+                                <ul>
+                                    <li><p>生涯测评系统</p><p>学科诊断系统</p></li>
+                                    <li><p>学职信息查询系统</p><p>升学途径分析系统</p></li>
+                                    <li><p>视频课程平台</p><p>新高考选科系统</p></li>
+                                    <li><p>志愿填报系统</p><p>学业管理系统</p></li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="youshi2">
+                <div class="s_title">服务支撑体系</div>
+                <div class="inner inner_line">
+                    <ul class="lis">
+                        <li>
+                            <p class="title">师资培训</p>
+                            <p><span>生涯规划咨询师</span><span>升学规划专家</span></p>
+                            <p><span>学业规划咨询师</span><span>志愿填报规划师</span></p>
+                            <img src="/imgs/attractInvestment/fwzc1.png" alt="">
+                        </li>
+                        <li>
+                            <p class="title">配套教材</p>
+                            <p>生涯规划与志愿填报教材、升学规划教材...</p>
+                            <div class="box">
+                                <p>
+                                    2020年<br/>强基计划白皮书
+                                </p>
+                                <p>
+                                    从生涯规划<br/>的角度谈<br/>高考志愿填报
+                                </p>
+                                <p>
+                                    新高考<br/>升学规划必读
+                                </p>
+                            </div>
+                            <img src="/imgs/attractInvestment/fwzc2.png" alt="">
+                        </li>
+                        <li>
+                            <p class="title">运营服务支持</p>
+                            <p>筹备期-开业期-成长期-成熟期，全方位服务</p>
+                            <img src="/imgs/attractInvestment/fwzc3.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="youshi2">
+                <div class="s_title">课程内容体系</div>
+                <div class="inner">
+                    <ul class="lis">
+                        <li>
+                            <p class="title">5大系列课程</p>
+                            <p><span>生涯课程</span><span>升学课程</span><span>志愿填报</span></p>
+                            <p><span>院校介绍</span><span>专业介绍</span><span>&emsp;&emsp;&emsp;&emsp;</span></p>
+                            <img src="/imgs/attractInvestment/kc1.png" alt="">
+                        </li>
+                        <li>
+                            <p class="title">直播课运营</p>
+                            <p>学马升学大讲堂全年48节课，周周直<br/>播</p>
+                            <img src="/imgs/attractInvestment/kc2.png" alt="">
+                        </li>
+                        <li>
+                            <p class="title">强基综评笔面试课程</p>
+                            <p>强基计划、综合评价复试笔面试课程，学科拔尖课程</p>
+                            <img src="/imgs/attractInvestment/kc3.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="advantage">
+            <div class="big_title">
+                使用学马教育品牌优势
+            </div>
+            <div class="inner">
+                <ul class="lis">
+                    <li v-for="(item,index) in advantage">
+                        <img :src="item.imgUrl" alt="">
+                        <p>{{item.detail}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="zhichi">
+            <div class="big_title">
+                校区运营服务与支持
+            </div>
+            <ul class="inner lis">
+                <li v-for="(item,index) in zhichi" class="lid">
+                    <div class="top_box">
+                        <img :src="item.imgUrl" alt="">
+                        <p>{{item.title}}</p>
+                    </div>
+                    <ul class="detail_lis" v-for="(child,idx) in item.detail">
+                        <li><span>{{idx + 1}}</span>{{child}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="liucheng">
+            <div class="big_title">
+                合作流程
+            </div>
+            <div class="inner content">
+                <img src="/imgs/attractInvestment/jiantou.png" alt="">
+                <ul class="lis">
+                    <li>合作意向沟通</li>
+                    <li>全方位审核</li>
+                    <li>达成合作协议</li>
+                    <li>运营支持</li>
+                </ul>
+            </div>
+        </div>
+        <div class="zhanshi zhiying">
+            <div class="big_title">
+                直营校区展示
+            </div>
+            <div class="inner lis">
+                <img :src="item.imgUrl" alt="" v-for="(item,index) in zhiying">
+            </div>
+        </div>
+        <div class="zhanshi">
+            <div class="big_title">
+                全国校区展示
+            </div>
+            <div class="inner lis">
+                <img :src="item.imgUrl" alt="" v-for="(item,index) in quanguo">
+            </div>
+        </div>
+        <div class="zhanshi jiangzuo">
+            <div class="big_title">
+                讲座与培训展示
+            </div>
+            <div class="inner lis">
+                <img :src="item.imgUrl" alt="" v-for="(item,index) in jiangzuo">
+            </div>
+        </div>
+        <!-- 加盟咨询 -->
+        <div class="join_us">
+            <div class="big_title">
+                加盟咨询
+            </div>
+            <div class="inner">
+                <div class="left">
+                    <div class="map" id="map"></div>
+                </div>
+                <div class="right">
+                    <p class="title">加盟咨询</p>
+                    <ul>
+                        <li>
+                            <p>加盟费用：</p>
+                            <div class="select_box">
+                                <input type="text" v-model="checkd_typed" @click="isShowOption1 = !isShowOption1">
+                                <img src="/imgs/attractInvestment/icon_xialahui.png" alt="" :class="isShowOption1 ? 'img_active': ''">
+                                <div class="option_box" v-show="isShowOption1">
+                                    <p @click="checkd_type = 1; isShowOption1=false">加盟费用</p>
+                                    <p @click="checkd_type = 2; isShowOption1=false">加盟模式</p>
+                                    <p @click="checkd_type = 3; isShowOption1=false">其他问题</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <p>姓&emsp;&emsp;名：</p>
+                            <input type="text" placeholder="请输入您的姓名" v-model="join_name">
+                        </li>
+                        <li>
+                            <p>手&emsp;&emsp;机：</p>
+                            <input type="number" placeholder="请输入您的电话" v-model="join_phonenumber">
+                        </li>
+                        <li>
+                            <p>留&emsp;&emsp;言：</p>
+                            <textarea  v-model="join_message" placeholder="请输入您的留言" onfocus="this.placeholder = ''"  onblur="this.placeholder = '请输入您的留言'"></textarea>
+                        </li>
+                    </ul>
+                    <div class="btn" @click="getJoinMessage">
+                        立即咨询
                     </div>
                 </div>
             </div>
@@ -244,25 +401,498 @@
                 <div class="right">
                     联系电话：4008-925-909
                 </div>
-            </div>    
+            </div>
         </div>
         <div class="copyright">
             <p>copyright ©️ 2011-2019 北京育铭天下科技有限公司  京ICP备17068633号-3  </p>
         </div>
+        <div class="fixed_box" v-show="isShowFixed">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <p>我想了解：</p>
+                        <div class="select_box">
+                            <input type="text" v-model="checkd_typed" @click="isShowOption2= !isShowOption2">
+                            <img src="/imgs/attractInvestment/icon_xialahui.png" alt="" :class="isShowOption2 ? 'img_active': ''">
+                            <div class="option_box" v-show="isShowOption2">
+                                <p @click="checkd_type = 1; isShowOption2=false">加盟费用</p>
+                                <p @click="checkd_type = 2; isShowOption2=false">加盟模式</p>
+                                <p @click="checkd_type = 3; isShowOption2=false">其他问题</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>姓名：</p>
+                        <input type="text" placeholder="请输入您的姓名" v-model="join_name">
+                    </li>
+                    <li>
+                        <p>手机：</p>
+                        <input type="number" placeholder="请输入您的电话" v-model="join_phonenumber">
+                    </li>
+                    <li>
+                        <p>留言：</p>
+                        <textarea  v-model="join_message" placeholder="请输入您的留言" onfocus="this.placeholder = ''"  onblur="this.placeholder = '请输入您的留言'"></textarea>
+                    </li>
+                </ul>
+                <div class="btn" @click="getJoinMessage">
+                    立即咨询
+                </div>
+                <div class="btn_close" @click="isShowFixed=false">×</div>
+            </div>
+        </div>
     </div>
 </template>
+<script>
+import echarts from 'echarts'
+import 'echarts/map/js/china.js'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import "swiper/dist/css/swiper.css";
+export default {
+    components:{swiper,swiperSlide},
+    data() {
+        return {
+            isShowOption1: false,
+            isShowOption2: false,
+            isShowFixed: true,
+            imgIndex: 1,
+            swiperOption:{
+                loop:true,
+                notNextTick:true,
+                initialSlide:0,
+                direction : 'vertical',
+                speed:300,
+                autoplay:{
+                    delay:2000,
+                    stopOnLastSlide:true,
+                    disableOnInteraction:false
+                },
+                parallax: true,
+                pagination:{
+                    el:".swiper-pagination",
+                    type: "bullets",
+                    clickable:true
+                },
+                effect : 'slide'
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+            free_name: '',
+            free_telephone_number: '',
+            remind: '',
+            isSuccess: true,
+            checkd_type: '1',
+            join_name: '',
+            join_phonenumber: '',
+            join_message: '',
+            isSuccessJoin: true,
+            join_remind: '',
+            freeData: [],
+
+
+            famouseTeachersStyle: 0,
+            famouseTeachersIndex: 0,
+            famouseTeachersCardStyle: 0,
+            partnershipIndex: 0,
+            partnershipStyle: 0,
+
+
+
+
+
+
+
+            advantage: [
+                { imgUrl: '/imgs/attractInvestment/icon_zhimingdugao.png',detail: '品牌知名度高，影响广泛，收获良好口碑' },
+                { imgUrl: '/imgs/attractInvestment/icon_qianjingguangkuo.png',detail: '项目前景广阔，投资少回报高，实现快速持续盈利' },
+                { imgUrl: '/imgs/attractInvestment/icon_yunyingjingyan.png',detail: '多年运营经验，管理模式成熟，为加盟商提供全面保障' },
+                { imgUrl: '/imgs/attractInvestment/icon-yanfatixichengshu.png',detail: '研发体系成熟，课程内容完备，得到市场一致好评认可' },
+                { imgUrl: '/imgs/attractInvestment/icon-shizituandui.png',detail: '顶尖师资团队，积淀多年经验，且有专业师资培训体系' }
+            ],
+            zhiying: [
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_01.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_02.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_03.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_04.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_05.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_06.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_07.png'},
+                { imgUrl: '/imgs/attractInvestment/zhiyingxiaoqu_08.png'},
+            ],
+            quanguo: [
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_01.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_02.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_03.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_04.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_05.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_06.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_07.png'},
+                { imgUrl: '/imgs/attractInvestment/quanguoxiaoqu_08.png'},
+            ],
+            jiangzuo: [
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_01.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_02.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_03.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_04.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_05.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_06.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_07.png'},
+                { imgUrl: '/imgs/attractInvestment/jiangzuoyupeixun_08.png'},
+            ],
+            zhichi: [
+                { title: '筹备期',imgUrl: '/imgs/attractInvestment/icon_01.png', detail: ['协助选址','市场调研','装修设计','薪酬绩效','产品设计','人员招聘','人员培训','系统使用'] },
+                { title: '开业期',imgUrl: '/imgs/attractInvestment/icon_02.png', detail: ['校区开业验收','开业方案制定','市场宣传支持','入校落地支持'] },
+                { title: '成长期',imgUrl: '/imgs/attractInvestment/icon_03.png', detail: ['市场方案订制','入校运营支持','日常培训支持','个性化校区分析诊断'] },
+                { title: '成熟期',imgUrl: '/imgs/attractInvestment/icon_04.png', detail: ['物料支持','品牌宣传','员工进阶培训'] },
+            ],
+            dataList:[
+                  {name: '南海诸岛', value: 0},
+                  {name: '北京', value: 0},
+                  {name: '天津', value: 1},
+                  {name: '上海', value: 1},
+                  {name: '重庆', value: 3},
+                  {name: '河北', value: 10},
+                  {name: '河南', value: 4},
+                  {name: '云南', value: 2},
+                  {name: '辽宁', value: 1},
+                  {name: '黑龙江', value: 1},
+                  {name: '湖南', value: 20},
+                  {name: '安徽', value:0},
+                  {name: '山东', value: 6},
+                  {name: '新疆', value: 3},
+                  {name: '江苏', value: 0},
+                  {name: '浙江', value: 2},
+                  {name: '江西', value: 0},
+                  {name: '湖北', value: 5},
+                  {name: '广西', value: 0},
+                  {name: '甘肃', value: 1},
+                  {name: '山西', value: 1},
+                  {name: '内蒙古', value: 0},
+                  {name: '陕西', value: 0},
+                  {name: '吉林', value: 2},
+                  {name: '福建', value: 1},
+                  {name: '贵州', value: 0},
+                  {name: '广东', value: 4},
+                  {name: '青海', value: 0},
+                  {name: '西藏', value: 0},
+                  {name: '四川', value: 1},
+                  {name: '宁夏', value: 0},
+                  {name: '海南', value: 1},
+                  {name: '台湾', value: 0},
+                  {name: '香港', value: 0},
+                  {name: '澳门', value: 0}
+            ],
+            scrollTop1: 0,
+            scrollTop2: 0
+        }
+    },
+    computed: {
+        freeArrList() {
+            let arr = [];
+            arr = this.freeData.slice(0,40);
+            return arr;
+        },
+        swiper() {
+            return this.$refs.mySwiper.swiper;
+        },
+        checkd_typed() {
+            let value = this.checkd_type;
+            console.log(value)
+            if(value ==1) {
+                return '加盟费用'
+            }else if(value ==2) {
+                return '加盟模式'
+            }else {
+                return '其他问题'
+            }
+        }
+    },
+    watch: {
+    },
+    methods: {
+        // 获取免费测试账号
+        getTestApplyList() {
+            var _this = this;
+            var token = window.sessionStorage.getItem('ymtxToken');
+
+            this.$ajax.post(this.G_uri + '/merchant/getTestApplyList', {
+
+            },{
+                headers:{
+                    token: token
+                }
+            })
+            .then(function(res) {
+                if(res.data.code == 2000) {
+                    _this.freeData = res.data.data;
+                }else if(res.data.code == 1016) {
+                    _this.$router.push('/login');
+                }
+            })
+            .catch(function(error) {
+                console.log(error)
+            });
+        },
+        // 获取免费测试账号
+        getFreeAccount() {
+            var _this = this;
+            var name = this.free_name;
+            var phone = this.free_telephone_number;
+            var token = window.sessionStorage.getItem('ymtxToken');
+            var reg = /(^1[34578]\d{9}$)|(^\d{8}$)/;
+            if(!name && !phone) {
+                this.remind = '姓名或手机号不能为空';
+                this.isSuccess = false
+                return;
+            }else if(!reg.test(phone)) {
+                this.remind = '手机号格式不正确'
+                this.isSuccess = false
+                return;
+            }
+            this.$ajax.post(this.G_uri + '/merchant/storeTestApply', {
+                name: name,
+                phone: phone
+            },{
+                headers:{
+                    token: token
+                }
+            })
+            .then(function(res) {
+                if(res.data.code == 2000) {
+                    _this.remind = '我们已经接收您的申请';
+                }else if(res.data.code == 1016) {
+                    _this.$router.push('/login');
+                }else {
+                    _this.isSuccess = false;
+                   _this.remind = res.data.msg;
+                }
+            })
+            .catch(function(error) {
+                console.log(error)
+            });
+        },
+        // 底部加盟咨询
+        //type 1加盟费用 2加盟模式 3其他问题
+        getJoinMessage() {
+            var _this = this;
+            var name = this.join_name;
+            var phone = this.join_phonenumber;
+            var type = this.checkd_type;
+            var message = this.join_message;
+            var token = window.sessionStorage.getItem('ymtxToken');
+            var reg = /(^1[34578]\d{9}$)|(^\d{8}$)/;
+            if(!name && !phone && !message) {
+                this.join_remind = '姓名、手机号和留言不能为空';
+                this.isSuccessJoin = false;
+                return;
+            }else if(!reg.test(phone)) {
+                this.join_remind = '手机号格式不正确';
+                this.isSuccessJoin = false;
+                return;
+            }
+            this.$ajax.post(this.G_uri + '/merchant/storeConsultation', {
+                name: name,
+                phone: phone,
+                type: type,
+                message: message
+            },{
+                headers:{
+                    token: token
+                }
+            })
+            .then(function(res) {
+                if(res.data.code == 2000) {
+                    _this.join_remind = '我们已经接收您的加盟咨询';
+                }else if(res.data.code == 1016) {
+                    _this.$router.push('/login');
+                }else {
+                    _this.isSuccessJoin = false;
+                    _this.join_remind = res.data.msg;
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        },
+
+        changePartnership(idx) {
+            if(idx > 0) {
+                if(this.partnershipIndex > 0) {
+                    this.partnershipIndex --;
+                    this.partnershipStyle += idx * 264;
+                }else {
+                    return;
+                }
+            }else if(idx < 0) {
+                if(this.partnershipIndex < this.partnership.length - 4) {
+                    this.partnershipIndex ++;
+                    this.partnershipStyle += idx * 264;
+                }else {
+                    return;
+                }
+            }
+        },
+
+
+        changeFamouseTeachers(idx) {
+            if(idx > 0) {
+                if(this.famouseTeachersIndex > 0) {
+                    if(this.famouseTeachersIndex < this.famouse_teachers.length - 6) {
+                        this.famouseTeachersIndex --;
+                        this.famouseTeachersStyle += idx * 160;
+                        this.famouseTeachersCardStyle += idx * 470;
+                    }else {
+                        this.famouseTeachersIndex --;
+                        this.famouseTeachersCardStyle += idx * 470;
+                    }
+
+
+                }else {
+                    return;
+                }
+            }else if(idx < 0) {
+                if(this.famouseTeachersIndex < this.famouse_teachers.length -1) {
+                    if(this.famouseTeachersIndex < this.famouse_teachers.length - 7) {
+                        this.famouseTeachersIndex ++;
+                        this.famouseTeachersStyle += idx * 160;
+                        this.famouseTeachersCardStyle += idx * 470;
+                    }else {
+                        this.famouseTeachersIndex ++;
+                        this.famouseTeachersCardStyle += idx * 470;
+                    }
+
+                }else {
+                    return;
+                }
+            }
+        },
+
+
+        changeTeachersCard(idx) {
+            let num = this.famouse_teachers.length - 7;
+            if(idx < num) {
+                this.famouseTeachersIndex = idx;
+                this.famouseTeachersStyle = -idx * 160;
+                this.famouseTeachersCardStyle = -idx * 470;
+            }else {
+                this.famouseTeachersIndex = idx;
+                this.famouseTeachersStyle = -num * 160;
+                this.famouseTeachersCardStyle = -idx * 470;
+            }
+        },
+
+
+        buildMap() {
+            let myChart = echarts.init(document.getElementById('map'));
+            let option = {
+                // tooltip: {
+                //     formatter:function(params,ticket, callback){
+                //         return params.seriesName+'<br />'+params.name+'：'+params.value
+                //     }//数据格式化
+                // },
+                visualMap: {
+                    min: 0,
+                    max: 15,
+                    left: 'left',
+                    top: 'bottom',
+                    text: ['20','0'],//取值范围的文字
+                    inRange: {
+                        color: ['#fff4e6', '#dd2002']//取值范围的颜色
+                    },
+                    show: false//图注
+                },
+                geo: {
+                    map: 'china',
+                    roam: false,//不开启缩放和平移
+                    zoom:1.23,//视角缩放比例
+                    label: {
+                        normal: {
+                            show: true,
+                            fontSize:'10',//注意：地图省份名字字体如果过大会导致字体重叠
+                            color: 'rgba(0,0,0,0.7)'
+                        }
+                    },
+                    itemStyle: {
+                        normal:{
+                            borderColor: 'rgba(0, 0, 0, 0.2)'
+                        },
+                        emphasis:{
+                            areaColor: '#F3B329',//鼠标选择区域颜色
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            // shadowBlur: 20,
+                            borderWidth: 0,
+                            // shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                },
+                series : [
+                    {
+                        name: '代理商数量',
+                        type: 'map',
+                        geoIndex: 0,
+                        data:this.dataList
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        },
+        getScroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            this.scrollTop2 = scrollTop;
+            if(this.scrollTop2-this.scrollTop1 <0) {
+                this.scrollTop1 = scrollTop;
+                this.$emit('changNav',true);
+                return;
+            }
+
+            if(scrollTop >= 74){
+                this.scrollTop1 = scrollTop;
+                this.$emit('changNav',false);
+            }
+        }
+    },
+    mounted() {
+        this.buildMap();
+        window.addEventListener('scroll', this.getScroll);
+    },
+    created() {
+        this.getTestApplyList();
+    }
+}
+</script>
 <style type="text/css" lang="less" scoped>
 .attract_investment {
-    letter-spacing: 1px;
+    padding-top: 74px;
+    position: relative;
+    top: -74px;
+    // letter-spacing: 1px;
     .inner {
         width: 1200px;
         margin: 0 auto;
     }
-    input {
+    #map{
+        width:700px;
+        height:500px;
+        margin: 0px auto;
+        border:none;
+
+    }
+    input,select,textarea {
         border: 0;  // 去除未选中状态边框
         outline: none; // 去除选中状态边框
         // background-color: rgba(0, 0, 0, 0);// 透明背景
     }
+
     input[type=number] {
         -moz-appearance: textfield;
     }
@@ -271,29 +901,236 @@
         -webkit-appearance: none;
         margin: 0;
     }
+    .youshi {
+        background-color: #F1F3F4;
+        .s_title {
+            width: 200px;
+            height: 56px;
+            line-height: 56px;
+            color: #fff;
+            text-align: center;
+            font-size: 22px;
+            margin: 50px auto;
+            background-color: #ED3836;
+            border-radius: 28px;
+        }
+        .youshi1 {
+            .s_title {
+                margin-top: 0px;
+            }
+            .inner {
+                padding-bottom: 50px;
+                border-bottom: 1px solid #dedede;
+            }
+            .content {
+                display: flex;
+                .left {
+                    margin-right: 100px;
+                }
+                .right {
+                    .box {
+                        margin-bottom: 40px;
+                        p {
+                            line-height: 40px;
+                            font-size: 18px;
+                            color: #333;
+                            width: 226px;
+                        }
+                        .title {
+                            span {
+                                color: #EC3335;
+                                font-size: 40px;
+                            }
+                            font-size: 34px;
+                            margin-bottom: 8px;
+                        }
+                        ul {
+                            li {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .youshi2 {
+            .inner {
+                padding-bottom: 50px;
+            }
+            .inner_line {
+                border-bottom: 1px solid #dedede;
+            }
+            .lis {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    box-sizing: border-box;
+                    width: 376px;
+                    height: 422px;
+                    padding: 24px;
+                    background-color: #fff;
+                    position: relative;
+                    border-radius: 20px;
+                    p {
+                        line-height: 34px;
+                        font-size: 18px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .title {
+                        line-height: 50px;
+                        color: #ED3836;
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                    }
+                    img {
+                        margin-top: 10px;
+
+                    }
+                    .box {
+                        position: absolute;
+                        text-align: center;
+                        width: 325px;
+                        height: 105px;
+                        display: flex;
+                        color: #333;
+                        justify-content: space-between;
+                        p {
+                            font-size: 12px;
+                            line-height: 18px;
+                            text-align: center;
+                        }
+                        left: 24px;
+                        bottom: 0;
+
+                    }
+                }
+            }
+        }
+        // height: 2090px;
+        // background: url(/imgs/attractInvestment/youshi.png) no-repeat center center;
+    }
+    .fixed_box {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 64px;
+        box-sizing: border-box;
+        padding: 12px 0;
+        z-index: 10;
+        background-color: #1B1A1A;
+        .btn_close {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            line-height: 24px;
+            color: #333;
+            text-align: center;
+            border-radius: 12px;
+            right: 20px;
+            top: 19px;
+            cursor: pointer;
+        }
+        .select_box {
+            position: relative;
+            img {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 16px;
+                height: 11px;
+            }
+            .img_active {
+                transform: rotate(-180deg);
+                transition: all .5s;
+            }
+            .option_box {
+                position: absolute;
+                bottom: 40px;
+                left: 0px;
+                border: 1px solid #dedede;
+                border-radius: 10px;
+                background-color: #fff;
+                width: 174px;
+                padding: 5px 0px;
+                p {
+                    line-height: 30px;
+                    cursor: pointer;
+                    padding-left: 10px;
+                    color: #333;
+                    &:hover {
+                        color: #F2473D;
+                    }
+                }
+            }
+        }
+        ul {
+            display: flex;
+            float: left;
+            li {
+                margin-right: 15px;
+                display: flex;
+                font-size: 14px;
+                color: #333;
+                p {
+                    line-height: 40px;
+                    color: #fff;
+                }
+                input, textarea, select {
+                    border: 1px solid #D2D3D3;
+                    box-sizing: border-box;
+                    padding: 0px 10px;
+                }
+                input, select{
+                    width: 174px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 5px;
+                }
+                textarea {
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 20px;
+                    width: 270px;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .btn {
+            float: left;
+            width: 125px;
+            height: 40px;
+            background-color: #E7252E;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
     .banner {
         background: url(/imgs/attractInvestment/banner.png) no-repeat center center;
-        height: 400px;
+        height: 680px;
     }
-    .title_box {
-        height: 50px;
-        line-height: 50px;
-        font-size: 36px;
-        display: flex;
-        justify-content: space-between;
+    .content_detail {
+        padding: 40px 0;
+        text-align: center;
+        font-size: 60px;
         color: #333;
-        .top {
-            flex: 1;
-            background: url('/imgs/attractInvestment/icon_header.png') no-repeat right center;
+        line-height: 80px;
+        background-color: #fff;
+        span {
+            color: #E70B23;
+            font-weight: bold;
         }
-        .foot {
-            flex: 1;
-            background: url('/imgs/attractInvestment/icon_header_foot.png') no-repeat left center;
-        }
-        .title {
-            padding: 0px 30px;
-            letter-spacing: 6px;
-        }
+    }
+    .big_title {
+        text-align: center;
+        font-size: 50px;
+        color: #333;
+        line-height: 170px;
     }
     .introduce {
         height: 70px;
@@ -305,19 +1142,41 @@
     }
     // 免费获取测试账号
     .free_getting_accounts {
-        padding-top: 50px;
-        background-color: #f5f7f6;
-        height: 300px;
+        box-sizing: border-box;
+        background: url(/imgs/attractInvestment/bg_huoqushiyongzhanghao.png) no-repeat center center;
+        height: 401px;
+        .big_title {
+            text-align: center;
+            font-size: 50px;
+            padding-top: 50px;
+            line-height: 50px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .title_detail {
+            height: 20px;
+            margin-bottom: 15px;
+            background: url(/imgs/attractInvestment/icon_huoquzhanghao.png) no-repeat center center;
+        }
+        .baoming {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            span {
+                font-size: 18px;
+                color: #EAF821;
+            }
+        }
         .remind {
-            height: 40px;
-            line-height: 40px;
+            height: 30px;
+            line-height: 30px;
             text-align: center;
             font-size: 16px;
         }
+
         .input_phone {
             box-sizing: border-box;
-            // margin-top: 40px;
-            margin-bottom:  66px;
+            margin-bottom:  30px;
             height: 72px;
             background-color: #fff;
             border-radius: 36px;
@@ -326,7 +1185,6 @@
             position: relative;
             padding: 16px;
             input::placeholder {
-                /* placeholder颜色  */
                 color: #333;
                 font-size: 18px;
             }
@@ -349,11 +1207,11 @@
                 width: 120px;
                 height: 50px;
                 border-radius: 25px;
-                background-color: #2a8efe;
+                background-color: #F1473D;
                 color: #fff;
                 font-size: 18px;
                 line-height: 50px;
-                box-shadow: 0px 5px 5px #277cd9;
+                box-shadow: 0px 5px 5px #BC0817;
                 position: absolute;
                 right: 15px;
                 top: 11px;
@@ -366,7 +1224,6 @@
         }
         .free_foot {
             height: 70px;
-            background-color: #4281c6;
             .inner {
                 position: relative;
             }
@@ -388,518 +1245,471 @@
             }
         }
     }
-    // 市场前景
-    .market_prospect {
-        padding-top: 50px;
-        background-color: #fff;
-        height: 600px;
-        .content {
-            height: 395px;
+    .zhengcebeijing {
+        height: 824px;
+        background: url(/imgs/attractInvestment/bg_zhengcebeijing.png) no-repeat center center;
+        .title_box {
+            text-align: center;
+            font-size: 50px;
+            color: #333;
+            line-height: 170px;
+        }
+        .lis {
+            width: 1200px;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 45px;
+            position: relative;
             li {
-                width: 364px;
-                height: 395px;
-                background-color: #4281c5;
-                .img_box {
-                    height: 195px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                width: 570px;
+                height: 136px;
+                border-radius: 25px;
+                line-height: 30px;
+                color: #fff;
+                font-size: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                padding: 40px 0;
+                background: linear-gradient(to right ,#FF6A4E,#DF1324);
+                position: relative;
+                z-index: 1;
+                &:last-child {
+                    margin-right: 0px;
                 }
-                .main_title {
-                    color: #fff;
-                    text-align: center;
-                    font-size: 26px;
-                    line-height: 75px;
+                p {
+                    width: 100%;
                 }
-                .main_detail {
+            }
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-top: -37px;
+                margin-left: -36px;
+                z-index: 10;
+            }
+        }
+        .biao {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        .biao_box {
+            height: 311px;
+            background: url(/imgs/attractInvestment/icon_shijianzhou.png) no-repeat center center;
+            position: relative;
+            li {
+                position: absolute;
+                text-align: center;
+                &:nth-child(1) {
+                    left: 130px;
+                    top: -15px;
+                }
+                &:nth-child(2) {
+                    left: 344px;
+                    bottom: -20px;
+                }
+                &:nth-child(3) {
+                    left: 560px;
+                    top: -15px;
+                }
+                &:nth-child(4) {
+                    left: 767px;
+                    bottom: -20px;
+                }
+                &:nth-child(5) {
+                    left: 1025px;
+                    top: 70px;
+                }
+                .title {
                     font-size: 18px;
-                    color: #fefefe;
+                    font-weight: 600;
+                    color: #E33E49;
+                    line-height: 40px;
+                }
+                .year {
+                    .title;
+                    font-size: 22px;
+                }
+                .dian {
+                    height: 50px;
+                }
+                .detail {
                     line-height: 24px;
-                    padding: 0px 54px;
+                    font-size: 16px;
+                    color: #000;
                 }
             }
         }
     }
-    // 学马三大优势
-    .three_advantages {
-        background-color: #f5f7f6;
-        height: 535px;
-        padding-top: 50px;
+    .guimo {
+        height: 973px;
+        background: url(/imgs/attractInvestment/bg_xingaokaoshichangguimo.png) no-repeat center 0;
+        .title_box {
+            text-align: center;
+            font-size: 50px;
+            color: #333;
+            line-height: 170px;
+        }
         .content {
-            .list {
-                height: 190px;
+            height: 517px;
+            background: url(/imgs/attractInvestment/icon_tubiao.png) no-repeat center center;
+            ul {
+                padding: 0 50px;
                 display: flex;
                 justify-content: space-between;
-                text-align: center;
-                margin-bottom: 56px;
                 li {
-                    width: 363px;
-                    .title {
-                        line-height: 98px;
-                        height: 98px;
-                        font-size: 26px;
-                        color: #fff;
-                    } 
-                    .detail {
-                        line-height: 26px;
-                        font-size: 16px;
-                        color: #fefefe;
+                    line-height: 82px;
+                    color: #DF1324;
+                    font-size: 22px;
+                    span {
+                        font-size: 28px;
+                        font-weight: 600;
                     }
                 }
             }
-            .foot_num {
-                height: 180px;
-                li {
-                    width: 130px;
-                    height: 96px;
-                    line-height: 48px;
-                    font-size: 22px;
-                    color: #333;
-                    float: left;
-                    margin-right: 200px;
-                    &:last-child {
-                        width: 196px;
-                        margin-right: 0px;
-                    }
-                    span {
-                        font-size: 35px;
-                        color: #4396f7;
-                    }
-                }
-            } 
         }
-    }
-    // 名师资源
-    .famouse_teachers {
-        padding-top: 50px;
-        height: 780px;
-        .card {
-            // padding: 40px 0px;
-            width: 470px;
-            height: 270px;
-            margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0px 0px 5px #dadada;
-            overflow: hidden;
-            .card_list {
-                height: 270px;
-                width: 20000px;
-                li {
-                    width: 470px;
-                    height: 270px;
-                    float: left;
-                    .img_box {
-                        width: 230px;
-                        height: 270px;
-                        float: left;
-                         text-align: center;
-                        img {
-                            // text-align: center;
-                            width: 100%;
-                            height: 100%;
-                            // justify-content: center;
-                            // align-items: center;
-                        }
-                    }
-                    .right {
-                        background-color: #3592fa;
-                        color: #fff;
-                        width: 200px;
-                        height: 240px;
-                        padding: 0px 20px;
-                        padding-top: 30px;
-                        position: relative;
-                        float: left;
-                        .type {
-                            position: absolute;
-                            right: 0px;
-                            top: 20px;
-                            width: 66px;
-                            height: 28px;
-                            padding-left: 14px;
-                            line-height: 28px;
-                            border-radius: 14px 0px 0px 14px;
-                            color: #3592fa;
-                            font-size: 13px;
-                            background-color: #fff;
-                        }
-                        .title {
-                            line-height: 30px;
-                            font-size: 18px;
-                        }
-                        .university {
-                            line-height: 26px;
-                            font-size: 15px;
-                        }
-                        .detail {
-                            font-size: 13px;
-                            line-height: 22px;
-                            height: 200px;
-                            display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 9;
-                            overflow: hidden;
-                        }
+        .lis_mid {
+            padding: 40px 0px;
+            display: flex;
+            justify-content: space-between;
+            li {
+                width: 360px;
+                height: 163px;
+                padding: 44px 30px;
+                box-sizing: border-box;
+                p {
+                    line-height: 40px;
+                    color: #E94747;
+                    font-size: 22px;
+                    span {
+                        font-weight: bold;
+                        font-size: 30px;
                     }
 
                 }
+                &:nth-child(1) {
+                    background: url(/imgs/attractInvestment/icon_3000wan.png) no-repeat center center;
+                }
+                &:nth-child(2) {
+                    background: url(/imgs/attractInvestment/icon_zixunfufwi.png) no-repeat center center;
+                }
+                &:nth-child(3) {
+                    background: url(/imgs/attractInvestment/icon_zixundanjia.png) no-repeat center center;
+                }
             }
         }
-        .content_main {
-            width: 1064px;
-            height: 124px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            .lis_main {
-                height: 124px;
-                width: 5000px;
-                margin-right: 0px;
-                transition: all 1s;
+    }
+
+    .yuji {
+        height: 270px;
+        margin-top: -45px;
+        background: url(/imgs/attractInvestment/icon_3000yi.png) no-repeat center center;
+        box-sizing: border-box;
+        padding-top: 92px;
+        p{
+            font-size: 50px;
+            margin-bottom: 30px;
+            line-height: 1em;
+            text-align: center;
+            color: #fff;
+            span {
+                color: #EAF821;
+            }
+        }
+    }
+
+    .guihua {
+        padding-top: 50px;
+        .title_box {
+            p {
+                font-size: 50px;
+                text-align: center;
+                margin-bottom: 20px;
+                line-height: 1em;
+                color: #333;
+                span {
+                    border-bottom: 2px solid #000;
+                }
+            }
+        }
+        .content {
+            height: 530px;
+            background: url(/imgs/attractInvestment/icon-shengxueguihua.png) no-repeat center center;
+            .lis {
+                position: relative;
+                height: 530px;
                 li {
-                    width: 95px;
-                    height: 124px;
-                    float: left;
-                    margin-right: 65px;
+                    width: 220px;
+                    text-align: center;
+                    line-height: 60px;
+                    font-size: 30px;
+                    color: #fff;
+                    position: absolute;
+                    &:nth-child(1) {
+                        left: 125px;
+                        bottom: 37px;
+                    }
+                    &:nth-child(2) {
+                        left: 490px;
+                        bottom: 50px;
+                    }
+                    &:nth-child(3) {
+                        left: 855px;
+                        bottom: 73px;
+                    }
+                }
+
+            }
+        }
+        .title_lis {
+            line-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            width: 955px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+            li {
+                font-size: 30px;
+                color: #333;
+                width: 225px;
+                text-align: center;
+            }
+        }
+    }
+    .resolve {
+        box-sizing: border-box;
+        height: 868px;
+        // padding-top: 50px;
+        background: url(/imgs/attractInvestment/bg_shengxuejiejuefangan.png) no-repeat center 0px;
+        .inner {
+            position: relative;
+            box-sizing: border-box;
+            height: 868px;
+            padding-top: 50px;
+        }
+        .title_box {
+            p {
+                font-size: 50px;
+                text-align: center;
+                margin-bottom: 20px;
+                line-height: 1em;
+                color: #333;
+                span {
+                    border-bottom: 2px solid #000;
+                }
+            }
+        }
+        .yuan {
+            li {
+                line-height: 30px;
+                font-size: 22px;
+                color: #fff;
+                width: 140px;
+                text-align: center;
+                position: absolute;
+                &:nth-child(1) {
+                    left: 0px;
+                    bottom: 408px;
+                }
+                &:nth-child(2) {
+                    left: 75px;
+                    bottom: 504px;
+                }
+                &:nth-child(3) {
+                    left: 140px;
+                    bottom: 408px;
+                }
+            }
+        }
+        .title_lis {
+            font-size: 20px;
+            color: #fff;
+            li {
+                width: 160px;
+                text-align: center;
+                line-height: 49px;
+                position: absolute;
+                &:nth-child(1) {
+                    left: 0px;
+                    bottom: 185px;
+                }
+                &:nth-child(2) {
+                    left: 268px;
+                    bottom: 247px;
+                }
+                &:nth-child(3) {
+                    left: 520px;
+                    bottom: 330px;
+                }
+                &:nth-child(4) {
+                    left: 780px;
+                    bottom: 414px;
+                }
+                &:nth-child(5) {
+                    left: 1034px;
+                    bottom: 502px;
+                }
+                &:nth-child(6) {
+                    left: 1034px;
+                    bottom: 182px;
+                }
+            }
+        }
+        .ft_lis {
+            font-size: 20px;
+            color: #fff;
+            li {
+                text-align: center;
+                position: absolute;
+                line-height: 50px;
+                &:nth-child(1) {
+                    width: 594px;
+                    left: 0px;
+                    bottom: 60px;
+                }
+                &:nth-child(2) {
+                    width: 258px;
+                    left: 594px;
+                    bottom: 60px;
+                }
+                &:nth-child(3) {
+                    width: 338px;
+                    left: 868px;
+                    bottom: 60px;
+                }
+                &:nth-child(4) {
+                    width: 338px;
+                    left: 868px;
+                    bottom: 110px;
+                }
+
+            }
+        }
+    }
+    .advantage {
+        padding-bottom: 60px;
+        .title_box {
+            text-align: center;
+            font-size: 50px;
+            color: #333;
+            line-height: 170px;
+        }
+        .lis {
+            display: flex;
+            justify-content: space-between;
+            li {
+                box-sizing: border-box;
+                width: 226px;
+                height: 245px;
+                padding: 30px 30px;
+                font-size: 16px;
+                color: #333;
+                text-align:center;
+                line-height: 27px;
+                box-shadow: 0px 0px 13px rgba(216,215,215,0.33);
+                border-radius: 20px;
+                img {
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .zhichi {
+        padding-bottom: 50px;
+        height: 568px;
+        box-sizing: border-box;
+        background: url(/imgs/attractInvestment/bg_xiaoquyunyingzhichi.png) no-repeat center center;
+        .big_title {
+            color: #fff;
+        }
+        .lis {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .lid {
+                box-sizing: border-box;
+                width: 520px;
+                height: 138px;
+                padding: 0px 30px;
+                padding-top: 20px;
+                border-radius: 20px;
+                margin-bottom: 45px;
+                background-color: #fff;
+                box-shadow: 10px 10px 0px #E7252E;
+                .top_box {
+                    display: flex;
+                    margin-bottom: 10px;
                     img {
-                        width: 95px;
-                        height: 95px;
-                        border-radius: 50%;
-                    }
-                    .img_box {
-                        width: 95px;
-                        height: 95px;
-                        border-radius: 50%;
-                        overflow: hidden;
-                    }
-                    .active_img {
-                        // box-sizing: border-box;
-                        width: 91px;
-                        height: 91px;
-                        border: 2px solid #3592fa;
-                        border-radius: 50%;
-                        overflow: hidden;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        img {
-                            width: 95px;
-                            height: 95px;
-                           
-                        }
+                        margin-right: 10px;
                     }
                     p {
-                        height: 40px;
-                        line-height: 40px;
-                        text-align: center;
-                        font-size: 15px;
-                        color: #333;
+                        font-size: 20px;
+                        line-height: 20px;
                     }
                 }
-            }
-        }
-        .bottom {
-            position: relative;
-        }
-        .btn {
-            .btn_left {
-                position: absolute;
-                left: 0px;
-                top: 50%;
-                margin-top: -30px;
-                width: 40px;
-                height: 60px;
-                line-height: 60px;
-                text-align: center;
-                color: #fff;
-                // background-color: rgba(51,51,51,.5);
-                font-size: 24px;
-                cursor: pointer;
-                background: url(/imgs/attractInvestment/icon/left.png) no-repeat center center;
-                // background-size: 35px 50px;
-                // &:hover {
-                //     background: url(/imgs/attractInvestment/icon/left_lan.png) no-repeat center center;
-                // }
-            }
-            .active_left {
-                background: url(/imgs/attractInvestment/icon/left_lan.png) no-repeat center center;
-            }
-          
-            .btn_right {
-                position: absolute;
-                right: 0px;
-                top: 50%;
-                margin-top: -30px;
-                width: 40px;
-                height: 60px;
-                line-height: 60px;
-                text-align: center;
-                color: #fff;
-                background: url(/imgs/attractInvestment/icon/right.png) no-repeat center center;
-                // background-size: 35px 50px;
-                font-size: 24px;
-                cursor: pointer;
-                // &:hover {
-                //     background: url(/imgs/attractInvestment/icon/right_lan.png) no-repeat center center;
-                // }
-            }
-            .active_right {
-                background: url(/imgs/attractInvestment/icon/right_lan.png) no-repeat center center;
-            }
-        }
-        .circle {
-            height: 70px;
-        }
-        .btn_more {
-            width: 280px;
-            height: 50px;
-            border-radius: 25px;
-            background-color: #2a8efe;
-            color: #fff;
-            font-size: 18px;
-            line-height: 50px;
-            box-shadow: 0px 5px 5px #277cd9;
-            cursor: pointer;
-            margin: 0 auto;
-            text-align: center;
-            &:active {
-                box-shadow: none;
-            }
-        }
-
-    }
-    // 品牌优势
-    .brand_advantage {
-        padding-top: 50px;
-        background-color: #f5f7f6;
-        height: 340px;
-        .content {
-            margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            li {
-                width: 146px;
-                height: 230px;
-                .img_box {
-                    height: 120px;
-                    width: 146px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .title {
-                    color: #333;
-                    // text-align: center;
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-            }
-        }
-    }
-    // 全方位运营支持保障
-    .yunying {
-        padding-top: 50px;
-        height: 850px;
-        background: url(/imgs/attractInvestment/yunying/bg_quanfangweiyunyingzhicibaozhang.png) no-repeat;
-        .title_box .title {
-            color: #fff;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between; 
-            flex-wrap: wrap;
-            padding-top: 45px;
-            li {
-                width: 510px;
-                height: 132px;
-                margin-bottom: 32px;
-                padding-bottom: 10px;
-                padding-right: 12px;
-                background: url(/imgs/attractInvestment/yunying/bg_yunyingzichi.png) no-repeat -5px 0px;
-                &:nth-child(2n) {
-                    background: url(/imgs/attractInvestment/yunying/bg_yunyingzichi02.png) no-repeat;
-                    .main {
-                        padding-left: 35px;
-                    }
-                }
-                .main {
-                    padding: 0 20px;
-                }
-                .title {
-                    padding-top: 4px;
-                    line-height: 50px;
-                    font-size: 22px;
-                    color: #333;
-                    letter-spacing: 2px;
-                }
-                .detail {
-                    font-size: 16px;
-                    color: #666;
-                    line-height: 24px;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-    }
-    // 合作生态圈
-    .cooperation {
-        padding-top: 50px;
-        height: 550px;
-        background-color: #f5f7f6;
-        .content {
-            padding-top: 45px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            li {
-                width: 308px;
-                height: 182px;
-                margin-bottom: 32px;
-                text-align: center;
-                color: #fff;
-
-                .title {
-                    padding-top: 18px;                
-                    font-size: 24px;
-                    line-height: 86px;
-                    height: 86px;
-                }
-                .detail {
-                    font-size: 18px;
-                    line-height: 38px;
-                    height: 38px;
-                }
-            }
-        }
-    }
-    // 合作伙伴风采
-    .partnership {
-        height: 570px;
-        padding-top: 50px;
-        .content {
-            padding: 0px 75px;
-            padding-top: 40px;
-            position: relative;
-            .content_main {
-                width: 1040px;
-                padding: 5px 5px;
-                height: 280px;
-                overflow: hidden;
-                position: relative;
-                .lis_main {
-                    height: 280px;
-                    width: 5000px;
-                    margin-right: 0px;
-                    transition: all 1s;
+                ul {
                     li {
-                        width: 232px;
-                        height: 272px;
-                        padding: 8px;
-                        padding-bottom: 0px;
-                        box-shadow: 0px 0px 5px #dadada;
                         float: left;
-                        margin-right: 16px;
-                        img {
-                            width: 232px;
-                            height: 232px;
-                        }
-                        p {
-                            height: 40px;
-                            line-height: 40px;
+                        font-size: 14px;
+                        margin-right: 24px;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                        span {
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+                            border: 1px solid #F25E5C;
+                            border-radius: 7px;
                             text-align: center;
-                            font-size: 15px;
-                            color: #333;
+                            color: #F25E5C;
+                            margin-right: 5px;
+                            line-height: 14px;
                         }
                     }
                 }
-            }
-            .btn {
-                .btn_left {
-                    position: absolute;
-                    left: 0px;
-                    top: 50%;
-                    margin-top: -30px;
-                    width: 40px;
-                    height: 60px;
-                    line-height: 60px;
-                    text-align: center;
-                    color: #fff;
-                    font-size: 24px;
-                    cursor: pointer;
-                    background: url(/imgs/attractInvestment/icon/left.png) no-repeat center center;
-                    // background-size: 35px 50px;
-                    // &:hover {
-                    //     background: url(/imgs/attractInvestment/icon/left_lan.png) no-repeat center center;
-                        
-                    // }
-                }
-                .active_left {
-                    background: url(/imgs/attractInvestment/icon/left_lan.png) no-repeat center center;
-                }
-                .btn_right {
-                    position: absolute;
-                    right: 0px;
-                    top: 50%;
-                    margin-top: -30px;
-                    width: 40px;
-                    height: 60px;
-                    line-height: 60px;
-                    text-align: center;
-                    color: #fff;
-                    font-size: 24px;
-                    cursor: pointer;
-                    background: url(/imgs/attractInvestment/icon/right.png) no-repeat center center;
-                    // background-size: 35px 50px;
-                    // &:hover {
-                    //     background: url(/imgs/attractInvestment/icon/right_lan.png) no-repeat center center;
-                    // }
 
-                }
-                .active_right {
-                    background: url(/imgs/attractInvestment/icon/right_lan.png) no-repeat center center;
-                }
-            }
-            .circle {
-                height: 10px;
-                margin: 0 auto;
-                padding: 25px 0px;
-                width: 206px;
-                li {
-                    width: 10px;
-                    height: 10px;
-                    background-color: #d2d4d3;
-                    border-radius: 5px;
-                    margin-right: 18px;
-                    float: left;
-                    &:last-child {
-                        margin-right: 0px;
-                    }
-                }
-                .active {
-                    background-color: #2d8ffc;
-                }
             }
         }
-        .btn_more {
-            width: 280px;
-            height: 50px;
-            border-radius: 25px;
-            background-color: #2a8efe;
-            color: #fff;
-            font-size: 18px;
-            line-height: 50px;
-            box-shadow: 0px 5px 5px #277cd9;
-            cursor: pointer;
+    }
+    .liucheng {
+        padding-bottom: 50px;
+        .lis {
+            width: 910px;
             margin: 0 auto;
-            margin-top: 20px;
-            text-align: center;
-            &:active {
-                box-shadow: none;
+            display: flex;
+            justify-content: space-between;
+            li {
+                width: 140px;
+                font-size: 22px;
+                color: #333;
+                text-align: center;
+            }
+
+        }
+    }
+    .zhanshi {
+        padding-bottom: 50px;
+        .lis {
+            height: 450px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: space-between;
+            img {
+                display: block;
+                width: 281px;
+                height: 210px;
             }
         }
+    }
+
+    .zhiying,.jiangzuo {
+        background-color: #F1F3F4;
     }
     // 加盟咨询
     .join_consultation {
@@ -1029,399 +1839,116 @@
         line-height: 42px;
         font-size: 14px;
     }
-}
-</style>
-<script>
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
-export default {
-    components:{swiper,swiperSlide},
-    data() {
-        return {
-            imgIndex: 1,
-            swiperOption:{
-                loop:true,
-                notNextTick:true,
-                initialSlide:0,
-                direction : 'vertical',
-                speed:300,
-                autoplay:{
-                    delay:2000,
-                    stopOnLastSlide:true,
-                    disableOnInteraction:false
-                },
-                parallax: true,
-                pagination:{
-                    el:".swiper-pagination",
-                    type: "bullets",
-                    clickable:true
-                },
-                effect : 'slide'
-            },
-            // swiperOption:{
-            //     loop:true,
-            //     notNextTick:true,
-            //     initialSlide:0,
-            //     direction : 'vertical',
-            //     autoplay:{
-            //         delay:2000,
-            //         stopOnLastSlide:false,
-            //         disableOnInteraction:false
-            //     },
-            //     pagination:{
-            //         el:".swiper-pagination",
-            //         type: "bullets",
-            //         clickable:true
-            //     },
-            //     effect : 'slide'
-            // },
 
 
-
-
-
-            free_name: '',
-            free_telephone_number: '',
-            remind: '',
-            isSuccess: true,
-            checkd_type: '1',
-            join_name: '',
-            join_phonenumber: '',
-            join_message: '',
-            isSuccessJoin: true,
-            join_remind: '',
-            freeData: [],
-
-
-            famouseTeachersStyle: 0,
-            famouseTeachersIndex: 0,
-            famouseTeachersCardStyle: 0,
-            // changeFamouseTeachersIndex: 0,
-
-
-
-
-
-            // teacherStyle:0,
-            partnershipIndex: 0,
-            partnershipStyle: 0,
-
-
-
-            market_prospect: [
-                { title: '政策导向', detail: '新高考改革深化，引起连锁反应，人才选拔制度发生大变化', imgUrl: '/imgs/attractInvestment/market_prospect/icon_zhengce.png' },
-                { title: '市场推动', detail: '行业竞争白热化，企业纷纷转型，探索教育新蓝海势在必行', imgUrl: '/imgs/attractInvestment/market_prospect/icon_shichang.png' },
-                { title: '升学刚需', detail: '面对新高考改革，学生不知所措，选科、志愿填报等成为难题', imgUrl: '/imgs/attractInvestment/market_prospect/icon_shengxuegangxu.png' }
-            ],
-            three_advantages: [
-                { title: '权威的系统工具', detail: '自主研发专业系统，荣获国家发明专利', imgUrl: '/imgs/attractInvestment/three_advantages/bg_quanweidexitonggongju.png' },
-                { title: '个性化辅导服务', detail: '一对一全方位服务，定制个性化培养方案', imgUrl: '/imgs/attractInvestment/three_advantages/bg_1.png' },
-                { title: '成熟的课程体系', detail: '多年课程研发经验，具有完备的课程体系', imgUrl: '/imgs/attractInvestment/three_advantages/bg_chengshudekechengtixi.png' },
-            ],
-
-            famouse_teachers: [
-                { title: '余松谦', detail: '学马创始人，中南大学硕士研究生，清华大学研究生校外导师', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_yulaoshi.png', type: '研发师资',university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/yusongqian.png' },
-                { title: '邬歆', detail: '曾参与两项国家自然科学基金和多项国家科技部课题研究。并发表2篇国际顶级期刊(SCI)，2篇国家核心期刊，并与清华大学合作完成多项人因学实验测试平台的软件开发任务，先后获职业定位测评、阅读能力评估等多项国家发明专利', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_wulaoshi.png', type: '研发师资',university: '清华大学硕士研究生', imgUrlTeacher: '/imgs/attractInvestment/teacher/wuxin.png' },
-                { title: '贺晓军', detail: '国家认证生涯规划师，高考改革研究专家，中国教育培训联盟理事。10年志愿工作经验，精通专业与职业的对应关系研究。在帮助考生准确定位、定量分析院校录取数据等方有很深的造诣', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_helaoshi.png', type: '研发师资', university: '中国科学院大学硕士研究生' , imgUrlTeacher: '/imgs/attractInvestment/teacher/hexiaojun.png'},
-                { title: '刘娜', detail: '主要研究方向为认知心理学，擅长认知潜能测评与提升', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_liuna.jpg', type: '研发师资', university: '清华大学博士' , imgUrlTeacher: '/imgs/attractInvestment/teacher/liuna.png'},
-                { title: '黄彬', detail: '生涯测评系统开发者，曾参与中国标准化研究院视觉参数测量方法标准化研究，组织虚拟仿真与驾驶安全实验室系统升级与场景建设，独立完成儿童书包受力分布测试过程', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_huangbin.png', type: '研发师资', university: '中国科学院大学心理研究所硏究生', imgUrlTeacher: '/imgs/attractInvestment/teacher/huangbin.png'},
-                // { title: '高宇', detail: '', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_yulaoshi.png', type: '研发师资', university: '北京师范大学硕士研究生' },
-                // { title: '王艺彤', detail: '主要研究方向为生涯教育。专攻学生生涯规划与高考志愿规划，擅长生涯咨询，高考志愿规划，学习状态激励，生涯测评解读', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_wangyitong.png', type: '研发师资', university: '北京师范大学心理学专业', imgUrlTeacher: '/imgs/attractInvestment/teacher/wangyitong.png' },
-                { title: '金波', detail: '以712分湖南省第二名的成绩考入清华大学，自主招生笔面试讲师，擅长高分提升，真题解析', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_jinbo.png', type: '研发师资', university: '清华大学环境学院国际班', imgUrlTeacher: '/imgs/attractInvestment/teacher/jinbo.png' },
-                // { title: '徐耀亚 ', detail: '主要研究方向为遥感图像识别，学科背景遥感学。擅长研学指导，学术研究指导，学科探索指导', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_xuyaoya.png', type: '研发师资', university: '北京大学博士', imgUrlTeacher: '/imgs/attractInvestment/teacher/xuyaoya.png' },
-                { title: '孙明欢', detail: '研究方向为汉语国际教育，专供研学游学，多年研究性学习课程的研发与组织经验。因其研发课程的实际效果，获得学员良好口碑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_sunminghuan.jpg', type: '研发师资', university: '吉林大学硕士研究生', imgUrlTeacher: '/imgs/attractInvestment/teacher/sunminghuan.jpg' },
-                { title: '赵越', detail: '对外经济贸易大学研究生   拥有多年生涯规划与志愿填报教研与实战指导工作经验', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_zhaoyue.png', type: '研发师资', university: '对外经济贸易大学研究生', imgUrlTeacher: '/imgs/attractInvestment/teacher/zhaoyue.png' },
-                { title: '李初曦', detail: '北京师范大学临床与咨询心理硕士，专业心理咨询师、督导师，临床专业工作小时数超1000小时，专注于青少年生涯规划、生涯测评和家庭教育等领域研究和实务工作', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_lichuxi.png', type: '研发师资', university: '北京师范大学临床与咨询心理硕士', imgUrlTeacher: '/imgs/attractInvestment/teacher/lichuxi.png' },
-                // { title: '肖汉骏 ', detail: '擅长自主招生指导，高考提分，高考真题解析', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_xiaohanjun.jpg', type: '研发师资', university: '奥林匹克竟赛金牌，保送清华计算机系', imgUrlTeacher: '/imgs/attractInvestment/teacher/xiaohanjun.png' },
-                // { title: '周雅琳 ', detail: '清华大学环境、化工与新材料大类   领军计划初试优秀 免笔试录取', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_yulaoshi.png', type: '研发师资', university: '清华大学' },
-                // { title: '肖世裕', detail: '清华大学物理系，领军计划笔试优秀录取', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_yulaoshi.png', type: '研发师资', university: '清华大学' },
-                { title: '乔丹', detail: '高考英语142分，曾成功辅导学员通过北大自主招生', imgUrl: '/imgs/attractInvestment/famouse_teachers/qiaodan.png', type: '研发师资', university: '北京师范大学汉语言文学硕士研究生', imgUrlTeacher: '/imgs/attractInvestment/teacher/qiaodan.png' },
-                { title: '陈杰', detail: '高中生升学服务专家，从事自主招生3年，擅长高中生升学服务、心理测评、志愿填报以及专业选择，服务学生超过300人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_chenjie.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/chenjie.png' },
-                { title: '李琴', detail: '高中生升学服务专家，从事自主招生4年，擅长高中生升学服务、自主招生服务、心理测评及辅导、专业选择，服务学生超过400人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_liqin.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/liqin.png' },
-                { title: '柳苏玲', detail: '高中生升学服务专家，高中生心理学专家，从事自主招生5年，擅长高中生升学规划、自主招生服务、综合评价服务、心理测评及辅导、专业选择、志愿填报，服务学生超过500人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_liushuling.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/liushuling.png' },
-                { title: '彭印珊', detail: '高中生升学服务专家，从事自主招生4年，擅长高中生升学服务、心理测评、志愿填报以及专业选择，服务学生超过400人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_pengyinshan.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/pengyinshan.png' },
-                // { title: '沈杨平', detail: '自主招生助理，从事自主招生服务3年，熟悉各大自主招生高校政策以及高考动态', imgUrl: 'imgs/attractInvestment/famouse_teachers/icon_yulaoshi.png', type: '实战师资', university: '' },
-                { title: '唐贺', detail: '高中生升学服务专家，从事自主招生4年，擅长高中生升学规划、自主招生服务、心理测评及辅导、志愿填报以及专业选择，服务学生超过400人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_tanghe.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/tanghe.png' },
-                { title: '王国瑞', detail: '自主招生专家，从事自主招生6年，了解各大高校自主招生政策，擅长学业规划、高中生心理辅导、专业选择指导、志愿填报，服务学生超过600人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_wangguorui.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/wangguorui.png' },
-                { title: '王月', detail: '高中生升学服务专家，从事自主招生4年，擅长高中生升学服务、自主招生服务、综合评价服务、心理测评及辅导、专业选择，服务学生超过450人', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_wangyue.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/wangyue.png' },
-                { title: '陈晶霞', detail: '从事高考升学规划服务七年，曾帮助超过400人进入985/211名校；熟练掌握自主招生、综合评价、平行志愿、港澳升学、出国留学等多元升学政策与技能；擅长学业诊断与规划，曾辅导超过100人进行心理梳理，取得良好效果；参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_chenjingxia.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/chenjingxia.png' },
-                { title: '胡璐', detail: '从事高考升学规划十年，八年填报志愿经验，对自主招生、综合评价、港澳升学、出国留学等多元升学途径有深入研究，特别擅长学业诊断与规划，曾指导超过500人进入到985/211名校。 曾在湖南多个中学开展生涯规划、志愿填报等公益讲座，受益人数超2万人。参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_hulu.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/hulu.png' },
-                { title: '陆国', detail: '从事高考升学规划10年，对综合评价，港澳升学、高校专项、出国留学等多元升学途径有深入研究，擅长寻找升学机会点，曾帮助超过300人进入985/211高校。参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_luguo.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/luguo.png' },
-                { title: '罗帷', detail: '从事升学规划服务8年，曾帮助多名学生进入清华大学、华中科技大学、中山大学、浙江大学等名校，帮助超过400人进入985/211名校；熟练掌握自主招生、综合评价、平行志愿、港澳升学、出国留学等多元升学政策；擅长学业诊断与规划，曾辅导超过100人进行心理梳理，取得良好效果；参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_luowei.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/luowei.png' },
-                { title: '韦韦老师', detail: '从事高考升学规划4年，3年志愿填报经验；主讲多场线上公益微课，帮助上千名学生、家长解答升学困惑；参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_weiwei.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/weiwei.png' },
-                { title: '于珊珊', detail: '从事高考升学规划服务10年，曾帮助多名学生进入清华大学、华中科技大学、中山大学、浙江大学等名校；从早期儿童教育理念到高中生学业规划均有涉及，曾任某高中生涯规划课程选修课老师，赢得学生们的一致好评；参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_yushanshan.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/yushanshan.png' },
-                { title: '余云方', detail: '从事高考升学规划服务5年，曾帮助超过400名学生进入985/211高校；熟悉掌握综合评价，自主招生，志愿填报，港澳升学，出国留学等多元升学政策与技能', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_yuyunfang.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/yuyunfang.png' },
-                { title: '张舒雅', detail: '从事高考升学规划服务五年，曾帮助超过400人进入985/211名校；熟练掌握自主招生、综合评价、平行志愿、港澳升学、出国留学等多元升学政策与技能；擅长学业诊断与规划，曾辅导超过100人进行心理梳理，取得良好效果；参与高考指导丛书《从生涯角度看志愿填报》编辑', imgUrl: '/imgs/attractInvestment/famouse_teachers/icon_zhangshuya.png', type: '实战师资', university: '', imgUrlTeacher: '/imgs/attractInvestment/teacher/zhangshuya.png' },
-
-            ],
-
-            brand_advantage: [
-                { title: '品牌知名度高，影响广泛，收获良好口碑', imgUrl: '/imgs/attractInvestment/brand_advantage/icon_pinpaizhimingdugao.png' },
-                { title: '项目前景广阔，投资少回报高，实现快速持续盈利', imgUrl: '/imgs/attractInvestment/brand_advantage/icon_qianjingguangkuo.png' },
-                { title: '多年运营经验，管理模式成熟，为加盟商提供全面保障 ', imgUrl: '/imgs/attractInvestment/brand_advantage/icon_duonianyunyingjingyan.png' },
-                { title: '研发体系成熟，课程内容完备，得到市场一致好评认可 ', imgUrl: '/imgs/attractInvestment/brand_advantage/icon_yanfatixichengshu.png' },
-                { title: '顶尖师资团队，积淀多年经验，且有专业师资培训体系', imgUrl: '/imgs/attractInvestment/brand_advantage/icon_dingjianshizituandui.png' }
-            ],
-
-            yunying: [
-                { title: '品牌支持', detail: '提供品牌形象输出、品牌推广支持、品牌宣传支持、品牌授权支持等' },
-                { title: '建校支持', detail: '提供选址评估支持、硬件建设方案、情景布置方案、人才招聘支 持、开业支持等' },
-                { title: '技术资料支持', detail: '提供网站系统技术支持、专业资料库支持、360°在线 答疑支持、标准化操作手册等' },
-                { title: '运营支持', detail: '提供区域运营指导支持、讲座讲师支持、市场支持、个性化指导 支持等' },
-                { title: '师训支持', detail: '提供规划师培训、志愿填报师培训、升学管理师培训、 生涯测评解读师培训等全方位立体式培训支持' },
-                { title: '增值服务支持', detail: '提供家长课堂、营队服务等具体增值服务支持' },
-                { title: '落地运营督导支持', detail: '专业的运营督导就是合作方的运营管家，为合作方带来 线上线下更贴心的指导服务，为合作方提供更高效的解决方案' },
-            ],
-
-            cooperation: [
-                { title: '学历提升机构', detail: '延展业务，提升价值', imgUrl: '/imgs/attractInvestment/cooperation/bg_xuelitisheng.png' },
-                { title: '高考报考机构', detail: '精准报考，助力升学', imgUrl: '/imgs/attractInvestment/cooperation/bg_gaokaofuwujigou.png' },   
-                { title: '职业规划机构', detail: '科学测评，全面规划', imgUrl: '/imgs/attractInvestment/cooperation/bg_zhiyeguihua.png' },
-                { title: '升学规划机构', detail: '生源引流，受益良多', imgUrl: '/imgs/attractInvestment/cooperation/bg_shengxueguihua.png' },
-                { title: '研学辅导机构', detail: '丰富课程，深化服务', imgUrl: '/imgs/attractInvestment/cooperation/bg_yanxuefudao.png' },
-                { title: '教辅机构', detail: '业绩倍增，实力增强', imgUrl: '/imgs/attractInvestment/cooperation/bg_jiaofujigou.png' },
-            ],
-
-            partnership: [
-                { title: '成都前构想教育', imgUrl: '/imgs/attractInvestment/partnership/bg_qiangouxiang.png' },
-                { title: '郑州晶领教育', imgUrl: '/imgs/attractInvestment/partnership/bg_jingling.png' },
-                { title: '湘潭学而乐教育', imgUrl: '/imgs/attractInvestment/partnership/bg_xueerle.png' },
-                { title: '娄底学海教育', imgUrl: '/imgs/attractInvestment/partnership/bg_loudixuehaijiaoyu.png' },
-                { title: '怀化文智教育', imgUrl: '/imgs/attractInvestment/partnership/bg_wenzhijiaoyu.png' },
-                { title: '甘肃奥博教育', imgUrl: '/imgs/attractInvestment/partnership/bg_aopengshudian.png' },
-                { title: '山东博翼教育', imgUrl: '/imgs/attractInvestment/partnership/bg_boyijiaoyu.png' },
-                { title: '河北博远教育', imgUrl: '/imgs/attractInvestment/partnership/bg_boyuan.png' },
-                { title: '沧州鸿运志愿', imgUrl: '/imgs/attractInvestment/partnership/bg_hongyunzhiyuan.png' },
-                { title: '福建微铭教育', imgUrl: '/imgs/attractInvestment/partnership/bg_weimingjiaoyu.png' },
-                { title: '山东学马教育', imgUrl: '/imgs/attractInvestment/partnership/bg_shandongxuemajiaoyu.png' },
-            ]
+    .join_us {
+        height: 787px;
+        background: url(/imgs/attractInvestment/bg_jiameng.png) no-repeat center center;
+        .big_title {
+            color: #fff;
         }
-    },
-    computed: {
-        freeArrList() {
-            let arr = [];
-            arr = this.freeData.slice(0,40);
-            return arr;
-        },
-        swiper() {
-            return this.$refs.mySwiper.swiper;
+        .inner {
+            padding-top: 30px;
+            padding-bottom: 50px;
+            overflow: hidden;
         }
-    },
-    methods: {
-
-        // 获取免费测试账号
-        getTestApplyList() {  
-            var _this = this;
-            var token = window.sessionStorage.getItem('ymtxToken');
-           
-            this.$ajax.post(this.G_uri + '/merchant/getTestApplyList', {  
-
-            },{
-                headers:{
-                    token: token
-                }
-            })
-            .then(function(res) {
-                if(res.data.code == 2000) {
-                    _this.freeData = res.data.data; 
-                }else if(res.data.code == 1016) {
-                    _this.$router.push('/login');
-                }
-            })
-            .catch(function(error) {
-                console.log(error)
-            });
-        },
-
-
-
-        // 获取免费测试账号
-        getFreeAccount() {  
-            var _this = this;
-            var name = this.free_name;
-            var phone = this.free_telephone_number;
-            var token = window.sessionStorage.getItem('ymtxToken');
-            var reg = /(^1[34578]\d{9}$)|(^\d{8}$)/;
-            if(!name && !phone) {
-                this.remind = '姓名或手机号不能为空';
-                this.isSuccess = false
-                return;
-            }else if(!reg.test(phone)) {
-                this.remind = '手机号格式不正确'
-                this.isSuccess = false
-                return;   
+        .left {
+            float: left;
+            img {
+                display: block;
+                width: 700px;
+                // height: ;
             }
-            this.$ajax.post(this.G_uri + '/merchant/storeTestApply', {  
-                name: name,
-                phone: phone
-            },{
-                headers:{
-                    token: token
-                }
-            })
-            .then(function(res) {
-                if(res.data.code == 2000) {
-                    _this.remind = '我们已经接收您的申请';
-                }else if(res.data.code == 1016) {
-                    _this.$router.push('/login');
-                }else {
-                    _this.isSuccess = false;
-                   _this.remind = res.data.msg;
-                }
-            })
-            .catch(function(error) {
-                console.log(error)
-            });
-        },
-        // 底部加盟咨询
-        //type 1加盟费用 2加盟模式 3其他问题
-        getJoinMessage() {
-            var _this = this;
-            var name = this.join_name;
-            var phone = this.join_phonenumber;
-            var type = this.checkd_type;
-            var message = this.join_message;
-            var token = window.sessionStorage.getItem('ymtxToken');
-            var reg = /(^1[34578]\d{9}$)|(^\d{8}$)/;
-            if(!name && !phone && !message) {
-                this.join_remind = '姓名、手机号和留言不能为空';
-                this.isSuccessJoin = false;
-                return;
-            }else if(!reg.test(phone)) {
-                this.join_remind = '手机号格式不正确';
-                this.isSuccessJoin = false;
-                return;   
+        }
+        .right {
+            box-sizing: border-box;
+            width: 380px;
+            height: 500px;
+            padding: 40px 18px 30px 18px;
+            background-color: #fff;
+            border-radius: 20px;
+            float: right;
+            .title {
+                font-size: 26px;
+                color: #ED3937;
+                margin-bottom: 30px;
+                text-align: center;
             }
-            this.$ajax.post(this.G_uri + '/merchant/storeConsultation', {  
-                name: name,
-                phone: phone,
-                type: type,
-                message: message
-            },{
-                headers:{
-                    token: token
+            .select_box {
+                position: relative;
+                img {
+                    position: absolute;
+                    right: 15px;
+                    top: 18px;
+                    width: 16px;
+                    height: 11px;
                 }
-            })
-            .then(function(res) {
-                if(res.data.code == 2000) {
-                    _this.join_remind = '我们已经接收您的加盟咨询';
-                }else if(res.data.code == 1016) {
-                    _this.$router.push('/login');
-                }else {
-                    _this.isSuccessJoin = false;
-                    _this.join_remind = res.data.msg;
+                .img_active {
+                    transform: rotate(-180deg);
+                    transition: all .5s;
                 }
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        },
-
-        changePartnership(idx) {
-            if(idx > 0) {
-                if(this.partnershipIndex > 0) {
-                    this.partnershipIndex --;
-                    this.partnershipStyle += idx * 264; 
-                }else {
-                    return;
-                }
-            }else if(idx < 0) {
-                if(this.partnershipIndex < this.partnership.length - 4) {
-                    this.partnershipIndex ++;
-                    this.partnershipStyle += idx * 264;
-                }else {
-                    return;
-                }
-            }
-        },
-
-
-        // changeFamouseTeachers(idx) {
-        //     if(idx > 0) {
-        //         if(this.famouseTeachersIndex > 0) {
-        //             if(this.famouseTeachersIndex < this.famouse_teachers.length - 6) {
-        //                 this.famouseTeachersIndex --;
-        //                 this.famouseTeachersStyle += idx * 160; 
-        //                 this.famouseTeachersCardStyle += idx * 470; 
-        //             }else {
-        //                 this.famouseTeachersIndex --;
-        //                 this.famouseTeachersCardStyle += idx * 470; 
-        //             }
-                   
-
-        //         }else {
-        //             return;
-        //         }
-        //     }else if(idx < 0) {
-        //         if(this.famouseTeachersIndex < this.famouse_teachers.length -1) {
-        //             if(this.famouseTeachersIndex < this.famouse_teachers.length - 7) {
-        //                 this.famouseTeachersIndex ++;
-        //                 this.famouseTeachersStyle += idx * 160;
-        //                 this.famouseTeachersCardStyle += idx * 470; 
-        //             }else {
-        //                 this.famouseTeachersIndex ++;
-        //                 this.famouseTeachersCardStyle += idx * 470; 
-        //             }
-                   
-        //         }else {
-        //             return;
-        //         }
-        //     }
-        // },
-
-        changeFamouseTeachers(idx) {
-            if(idx > 0) {
-                if(this.famouseTeachersIndex > 0) {
-                    if(this.famouseTeachersIndex < this.famouse_teachers.length - 6) {
-                        this.famouseTeachersIndex --;
-                        this.famouseTeachersStyle += idx * 160; 
-                        this.famouseTeachersCardStyle += idx * 470; 
-                    }else {
-                        this.famouseTeachersIndex --;
-                        this.famouseTeachersCardStyle += idx * 470; 
+                .option_box {
+                    position: absolute;
+                    top: 40px;
+                    left: 0px;
+                    border: 1px solid #dedede;
+                    border-radius: 10px;
+                    background-color: #fff;
+                    width: 265px;
+                    padding: 5px 0px;
+                    p {
+                        line-height: 30px;
+                        cursor: pointer;
+                        padding-left: 10px;
+                        &:hover {
+                            color: #F2473D;
+                        }
                     }
-                   
-
-                }else {
-                    return;
                 }
-            }else if(idx < 0) {
-                if(this.famouseTeachersIndex < this.famouse_teachers.length -1) {
-                    if(this.famouseTeachersIndex < this.famouse_teachers.length - 7) {
-                        this.famouseTeachersIndex ++;
-                        this.famouseTeachersStyle += idx * 160;
-                        this.famouseTeachersCardStyle += idx * 470; 
-                    }else {
-                        this.famouseTeachersIndex ++;
-                        this.famouseTeachersCardStyle += idx * 470; 
+            }
+            ul {
+                margin-bottom: 30px;
+                li{
+                    display: flex;
+                    font-size: 14px;
+                    color: #333;
+                    margin-bottom: 18px;
+                    p {
+                        line-height: 46px;                    }
+                    input, textarea, select {
+                        border: 1px solid #D2D3D3;
+                        width: 265px;
+                        box-sizing: border-box;
+                        padding: 0px 10px;
                     }
-                   
-                }else {
-                    return;
+                    input, select{
+                        height: 46px;
+                        line-height: 44px;
+                        border-radius: 22px;
+                    }
+                    textarea {
+                        padding: 10px;
+                        line-height: 1.5em;
+                        border-radius: 20px;
+                        height: 83px;
+                    }
+
                 }
             }
-        },
-
-
-        changeTeachersCard(idx) {
-            let num = this.famouse_teachers.length - 7;
-            if(idx < num) {
-                this.famouseTeachersIndex = idx;
-                this.famouseTeachersStyle = -idx * 160; 
-                this.famouseTeachersCardStyle = -idx * 470; 
-            }else {
-                this.famouseTeachersIndex = idx;
-                this.famouseTeachersStyle = -num * 160; 
-                this.famouseTeachersCardStyle = -idx * 470;   
+            .btn {
+                width: 334px;
+                height: 54px;
+                background-color: #F95A45;
+                color: #fff;
+                text-align: center;
+                line-height: 54px;
+                border-radius: 27px;
+                margin: 0 auto;
+                margin-top: 10px;
+                cursor: pointer;
             }
-        }
 
-    },
-    mounted() {
-       
-    },
-    created() {
-        this.getTestApplyList();
+        }
     }
 }
-</script>
+</style>

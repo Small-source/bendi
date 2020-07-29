@@ -53,7 +53,7 @@
 			</div>
 		</div>
 		<!-- 我们的青春，记录着真实的留学故事 -->
-		<div class="liuxuegushi">
+<!-- 		<div class="liuxuegushi">
 			<div class="inner">
 				<h5 class="dabiaoti">我们的青春，记录着真实的留学故事</h5>
 				<div class="underline"></div>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- 留学顾问 -->
 		<div class="famousTeacher">
 			<div class="inner">
