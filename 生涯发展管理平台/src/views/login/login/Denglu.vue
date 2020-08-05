@@ -3,7 +3,7 @@
     <div class="denglu">
         <div class="inputs">
             <div class="neirong1">
-                <input type="text" v-model="Username" placeholder="请输入手机号码或8位卡号" class="Username" autocomplete="on">
+                <input type="text" v-model="Username"   placeholder="请输入手机号码或8位卡号" class="Username" autocomplete="on">
                 <!-- <div class="icon"></div> -->
             </div>
             <!-- <p class="warning">{{warning1}}</p> -->
@@ -84,15 +84,15 @@
         //     height: 40px;
         //     position: relative;
         // }
-       
-        
+
+
 
         input {
             border: none;
             border-radius: 20px;
             background-color: #f7f4fb;
         }
-     
+
         .warning {
             height: 25px;
             line-height: 25px;
@@ -109,7 +109,7 @@
             text-align: center;
         }
     }
-   
+
     .jizhuzhuangtai {
         height: 20px;
         line-height: 20px;
@@ -152,7 +152,7 @@
         .button;
         background-color: #666;
         color: #fff;
-        cursor: no-drop; 
+        cursor: no-drop;
     }
 }
 </style>
@@ -160,7 +160,7 @@
 export default {
 // props: [ 'message' ],
     data() {
-      return { 
+      return {
         Username: '',
         Password: '',
         // 错误提示词
@@ -229,7 +229,7 @@ export default {
             this.$ajax.post(this.G_uri + '/login/login', {
                 userName: Username,
                 password: Password,
-                webSite: OEMdomain 
+                webSite: OEMdomain
             })
             .then(function(res) {
                 var userNameLength = _this.Username.length;
@@ -250,11 +250,11 @@ export default {
                         _this.$router.push(path)
                     }
                 } else if( res.data.code == 2000 && userNameLength == 8 ){
-                  
+
                     // 绑定手机号
                     window.sessionStorage.setItem('ymtxUserMessage', true);
                     window.sessionStorage.setItem("ymtxCard",JSON.stringify(obj));
-                 
+
                     if(is_band_phone == 1) {
                         _this.$emit('go-phone');
                     }else if(is_band_phone == 2) {
@@ -269,7 +269,7 @@ export default {
                 //     window.sessionStorage.setItem('ymtxUserMessage', true);
                 //     _this.$emit('go-phone')
                 // }
-               
+
             })
             .catch(function(err) {
                 console.log(err)
@@ -279,7 +279,7 @@ export default {
         // 验证按钮能否变为可点击的状态 isclick=true
         isclick() {
             var Username = this.Username;
-            var Password = this.Password; 
+            var Password = this.Password;
             if(Username && Password) {
                 this.isclicked = true;
             }else {
@@ -300,6 +300,10 @@ export default {
     },
     created() {
         this.goReaduser();
+    },
+    mounted(){
+
+
     }
 }
 </script>

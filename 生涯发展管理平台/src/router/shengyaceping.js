@@ -5,6 +5,7 @@ const EvluaClassify = () => import('../views/ceping/shengyaceping/view/evlua/cla
 const EvluaClassify12 = () => import('../views/ceping/shengyaceping/view/evlua/classify12');
 const EvluaClassify13 = () => import('../views/ceping/shengyaceping/view/evlua/classify13');
 const EvluaClassify14 = () => import('../views/ceping/shengyaceping/view/evlua/classify14');
+const EvluaClassify15 = () => import('../views/ceping/shengyaceping/view/evlua/classify15');
 const EvluaClassify22 = () => import('../views/ceping/shengyaceping/view/evlua/classify22');
 const EvluaClassify23 = () => import('../views/ceping/shengyaceping/view/evlua/classify23');
 // 认知潜能
@@ -16,30 +17,23 @@ const RzqnQues3 = () => import('../views/ceping/shengyaceping/view/rzqn/ques3');
 const RzqnQues4 = () => import('../views/ceping/shengyaceping/view/rzqn/ques4');
 const RzqnQues5 = () => import('../views/ceping/shengyaceping/view/rzqn/ques5');
 const RzqnQues6 = () => import('../views/ceping/shengyaceping/view/rzqn/ques6');
-const RzqnQues71 = () => import('../views/ceping/shengyaceping/view/rzqn/ques71');
-const RzqnQues72 = () => import('../views/ceping/shengyaceping/view/rzqn/ques72');
 const RzqnQues8 = () => import('../views/ceping/shengyaceping/view/rzqn/ques8');
 const RzqnQues91 = () => import('../views/ceping/shengyaceping/view/rzqn/ques91');
 const RzqnQues92 = () => import('../views/ceping/shengyaceping/view/rzqn/ques92');
-const RzqnQues10 = () => import('../views/ceping/shengyaceping/view/rzqn/ques10');
-const RzqnQues11 = () => import('../views/ceping/shengyaceping/view/rzqn/ques11');
-const RzqnQues121 = () => import('../views/ceping/shengyaceping/view/rzqn/ques121')
-const RzqnQues122 = () => import('../views/ceping/shengyaceping/view/rzqn/ques122')
-const RzqnQues123 = () => import('../views/ceping/shengyaceping/view/rzqn/ques123')
 const RzqnQues13 = () => import('../views/ceping/shengyaceping/view/rzqn/ques13')
+const RzqnQues141 = () => import('../views/ceping/shengyaceping/view/rzqn/ques141')
+const RzqnQues142 = () => import('../views/ceping/shengyaceping/view/rzqn/ques142')
+const RzqnQues143 = () => import('../views/ceping/shengyaceping/view/rzqn/ques143')
 const RzqnInstru1 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru1')
 const RzqnInstru21 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru21')
 const RzqnInstru3 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru3')
 const RzqnInstru4 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru4')
 const RzqnInstru5 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru5')
 const RzqnInstru6 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru6')
-const RzqnInstru7 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru7')
 const RzqnInstru8 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru8')
 const RzqnInstru9 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru9')
-const RzqnInstru10 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru10')
-const RzqnInstru11 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru11')
-const RzqnInstru12 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru12')
 const RzqnInstru13 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru13')
+const RzqnInstru14 = () => import('../views/ceping/shengyaceping/view/rzqn/quesInstru14')
 const RzqnGuide1 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide1')
 const RzqnGuide21 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide21')
 const RzqnGuide22 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide22')
@@ -48,18 +42,13 @@ const RzqnPlay3 = () => import('../views/ceping/shengyaceping/view/rzqn/quesPlay
 const RzqnGuide4 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide4')
 const RzqnGuide5 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide5')
 const RzqnGuide6 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide6')
-const RzqnGuide71 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide71')
-const RzqnGuide72 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide72')
-const RzqnPlay7 = () => import('../views/ceping/shengyaceping/view/rzqn/quesPlay7')
 const RzqnGuide8 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide8')
 const RzqnGuide91 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide91')
 const RzqnGuide92 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide92')
-const RzqnGuide10 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide10')
-const RzqnGuide11 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide11')
-const RzqnGuide121 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide121')
-const RzqnGuide122 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide122')
-const RzqnGuide123 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide123')
 const RzqnGuide13 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide13')
+const RzqnGuide141 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide141')
+const RzqnGuide142 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide142')
+const RzqnGuide143 = () => import('../views/ceping/shengyaceping/view/rzqn/quesGuide143')
 const RzqnSuccess1 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess1')
 const RzqnSuccess21 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess21')
 const RzqnSuccess22 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess22')
@@ -67,17 +56,13 @@ const RzqnSuccess3 = () => import('../views/ceping/shengyaceping/view/rzqn/quesS
 const RzqnSuccess4 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess4')
 const RzqnSuccess5 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess5')
 const RzqnSuccess6 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess6')
-const RzqnSuccess71 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess71')
-const RzqnSuccess72 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess72')
 const RzqnSuccess8 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess8')
 const RzqnSuccess91 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess91')
 const RzqnSuccess92 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess92')
-const RzqnSuccess10 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess10')
-const RzqnSuccess11 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess11')
-const RzqnSuccess121 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess121')
-const RzqnSuccess122 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess122')
-const RzqnSuccess123 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess123')
 const RzqnSuccess13 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess13')
+const RzqnSuccess141 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess141')
+const RzqnSuccess142 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess142')
+const RzqnSuccess143 = () => import('../views/ceping/shengyaceping/view/rzqn/quesSuccess143')
 //性格特性
 const XgtxIndex = () => import('../views/ceping/shengyaceping/view/xgtx')
 const quesOne = () => import('../views/ceping/shengyaceping/view/xgtx/quesOne')
@@ -141,6 +126,14 @@ export default[
                 }
             },
             {
+                path: '/shengyaceping/evlua/classify/15',
+                name: 'EvluaClassify15',
+                component: EvluaClassify15,
+                meta: {
+                    // requireAuth: true, // 需要登录
+                }
+            },
+            {
                 path: '/shengyaceping/evlua/classify/22',
                 name: 'EvluaClassify22',
                 component: EvluaClassify22,
@@ -198,16 +191,6 @@ export default[
                 component: RzqnQues6
             },
             {
-                path: '/shengyaceping/rzqn/7',
-                name: 'RzqnQues71',
-                component: RzqnQues71
-            },
-            {
-                path: '/shengyaceping/rzqn/72',
-                name: 'RzqnQues72',
-                component: RzqnQues72
-            },
-            {
                 path: '/shengyaceping/rzqn/8',
                 name: 'RzqnQues8',
                 component: RzqnQues8
@@ -223,34 +206,24 @@ export default[
                 component: RzqnQues92
             },
             {
-                path: '/shengyaceping/rzqn/10',
-                name: 'RzqnQues10',
-                component: RzqnQues10
-            },
-            {
-                path: '/shengyaceping/rzqn/11',
-                name: 'RzqnQues11',
-                component: RzqnQues11
-            },
-            {
-                path: '/shengyaceping/rzqn/121',
-                name: 'RzqnQues121',
-                component: RzqnQues121
-            },
-            {
-                path: '/shengyaceping/rzqn/122',
-                name: 'RzqnQues122',
-                component: RzqnQues122
-            },
-            {
-                path: '/shengyaceping/rzqn/123',
-                name: 'RzqnQues123',
-                component: RzqnQues123
-            },
-            {
                 path: '/shengyaceping/rzqn/13',
                 name: 'RzqnQues13',
                 component: RzqnQues13
+            },
+            {
+                path: '/shengyaceping/rzqn/141',
+                name: 'RzqnQues141',
+                component: RzqnQues141
+            },
+            {
+                path: '/shengyaceping/rzqn/142',
+                name: 'RzqnQues142',
+                component: RzqnQues142
+            },
+            {
+                path: '/shengyaceping/rzqn/143',
+                name: 'RzqnQues143',
+                component: RzqnQues143
             },
             {
                 path: '/shengyaceping/rzqn/instru/1',
@@ -287,11 +260,6 @@ export default[
                 component: RzqnInstru6
             },
             {
-                path: '/shengyaceping/rzqn/instru/7',
-                name: 'RzqnInstru7',
-                component: RzqnInstru7
-            },
-            {
                 path: '/shengyaceping/rzqn/instru/8',
                 name: 'RzqnInstru8',
                 component: RzqnInstru8
@@ -302,24 +270,14 @@ export default[
                 component: RzqnInstru9
             },
             {
-                path: '/shengyaceping/rzqn/instru/10',
-                name: 'RzqnInstru10',
-                component: RzqnInstru10
-            },
-            {
-                path: '/shengyaceping/rzqn/instru/11',
-                name: 'RzqnInstru11',
-                component: RzqnInstru11
-            },
-            {
-                path: '/shengyaceping/rzqn/instru/12',
-                name: 'RzqnInstru12',
-                component: RzqnInstru12
-            },
-            {
                 path: '/shengyaceping/rzqn/instru/13',
                 name: 'RzqnInstru13',
                 component: RzqnInstru13
+            },
+            {
+                path: '/shengyaceping/rzqn/instru/14',
+                name: 'RzqnInstru14',
+                component: RzqnInstru14
             },
             {
                 path: '/shengyaceping/rzqn/guide/1',
@@ -362,21 +320,6 @@ export default[
                 component: RzqnGuide6
             },
             {
-                path: '/shengyaceping/rzqn/guide/7',
-                name: 'RzqnGuide71',
-                component: RzqnGuide71
-            },
-            {
-                path: '/shengyaceping/rzqn/play/7',
-                name: 'RzqnPlay7',
-                component: RzqnPlay7
-            },
-            {
-                path: '/shengyaceping/rzqn/guide/72',
-                name: 'RzqnGuide72',
-                component: RzqnGuide72
-            },
-            {
                 path: '/shengyaceping/rzqn/guide/8',
                 name: 'RzqnGuide8',
                 component: RzqnGuide8
@@ -398,50 +341,33 @@ export default[
                 }
             },
             {
-                path: '/shengyaceping/rzqn/guide/10',
-                name: 'RzqnGuide10',
-                component: RzqnGuide10,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/guide/11',
-                name: 'RzqnGuide11',
-                component: RzqnGuide11,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-
-            {
-                path: '/shengyaceping/rzqn/guide/121',
-                name: 'RzqnGuide121',
-                component: RzqnGuide121,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/guide/122',
-                name: 'RzqnGuide122',
-                component: RzqnGuide122,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/guide/123',
-                name: 'RzqnGuide123',
-                component: RzqnGuide123,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
                 path: '/shengyaceping/rzqn/guide/13',
                 name: 'RzqnGuide13',
                 component: RzqnGuide13,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/guide/141',
+                name: 'RzqnGuide141',
+                component: RzqnGuide141,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/guide/142',
+                name: 'RzqnGuide142',
+                component: RzqnGuide142,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/guide/143',
+                name: 'RzqnGuide143',
+                component: RzqnGuide143,
                 meta: {
                     requireAuth: true, // 需要登录
                 }
@@ -503,22 +429,6 @@ export default[
                 }
             },
             {
-                path: '/shengyaceping/rzqn/success/7',
-                name: 'RzqnSuccess71',
-                component: RzqnSuccess71,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/success/72',
-                name: 'RzqnSuccess72',
-                component: RzqnSuccess72,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
                 path: '/shengyaceping/rzqn/success/8',
                 name: 'RzqnSuccess8',
                 component: RzqnSuccess8,
@@ -543,49 +453,33 @@ export default[
                 }
             },
             {
-                path: '/shengyaceping/rzqn/success/10',
-                name: 'RzqnSuccess10',
-                component: RzqnSuccess10,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/success/11',
-                name: 'RzqnSuccess11',
-                component: RzqnSuccess11,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/success/121',
-                name: 'RzqnSuccess121',
-                component: RzqnSuccess121,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/success/122',
-                name: 'RzqnSuccess122',
-                component: RzqnSuccess122,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
-                path: '/shengyaceping/rzqn/success/123',
-                name: 'RzqnSuccess123',
-                component: RzqnSuccess123,
-                meta: {
-                    requireAuth: true, // 需要登录
-                }
-            },
-            {
                 path: '/shengyaceping/rzqn/success/13',
                 name: 'RzqnSuccess13',
                 component: RzqnSuccess13,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/success/141',
+                name: 'RzqnSuccess141',
+                component: RzqnSuccess141,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/success/142',
+                name: 'RzqnSuccess142',
+                component: RzqnSuccess142,
+                meta: {
+                    requireAuth: true, // 需要登录
+                }
+            },
+            {
+                path: '/shengyaceping/rzqn/success/143',
+                name: 'RzqnSuccess143',
+                component: RzqnSuccess143,
                 meta: {
                     requireAuth: true, // 需要登录
                 }

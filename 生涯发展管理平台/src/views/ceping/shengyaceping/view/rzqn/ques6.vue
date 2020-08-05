@@ -35,7 +35,6 @@
               <div class="bottom next clearfix" style="position: absolute;bottom: 20px;width: 100%;">
                 <a href="javascript:;" style="margin:0 auto;" class="btn btn_start" v-if="tip==0" @click="answerClick($event)">确定</a>
               </div>
-
             </div>
             <!--<div class="ques-answer-tip" v-if="tip==1" @click="clickStart">点击鼠标，开始测试</div>-->
 
@@ -231,7 +230,7 @@
             var data = res.data;
             if (data.code == 0) {
 //              this.layerMsg('测试成功!')
-              this.saveNode(2, 72);
+              this.saveNode(2, 141);
               this.$router.push('/shengyaceping/rzqn/success/6')
             } else {
               this.layerMsg(data.msg);
