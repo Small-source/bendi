@@ -292,8 +292,8 @@ export default {
     mounted() {
     },
     created() {
-        var testType360 = window.sessionStorage.getItem('testType360');
-        this.goTest(testType360);
+        // var testType360 = window.sessionStorage.getItem('testType360');
+        // this.goTest(testType360);
     }
 }
 </script>
