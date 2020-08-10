@@ -19,17 +19,16 @@
             <div class="zhuti zhuti1" v-if="test=='two'">
               <table class="one">
                 <tr v-for="(item,index) in arrAs" :key="index">
-                   <td v-for="(ite,i) in item" :key="i" :style="{backgroundImage:'url(/statics/imgs/zhuyili/partB/'+ite+'_'+suijishu()+'.png)'}" @click="clickQuestion($event)"></td>
+                   <td v-for="(ite,i) in item" :key="i" :style="{backgroundImage:'url(/statics/imgs/zhuyili/partB/'+ite+'_'+suijishu()+'.png)'}" @click="clickQuestion($event,ite)"></td>
                 </tr>
               </table>
-              <ul class="two">
-              </ul>
             </div>
             <div class="zhuti zhuti2" v-if="test=='one'">
-              <ul class="one ones">
-              </ul>
-              <div>
-              </div>
+              <table class="one">
+                <tr v-for="(item,index) in arrBs" :key="index">
+                  <td v-for="(ite,i) in item" :key="i" :style="{backgroundImage:'url(/statics/imgs/zhuyili/partB/'+ite+'_'+suijishu()+'.png)'}" @click="clickQuestion($event,ite)"></td>
+                </tr>
+              </table>
             </div>
             <div class="bottom next clearfix" style="position: absolute;bottom: 30px;width: 100%;">
               <a href="javascript:;" style="margin:0 auto;" class="btn btn_start" @click="submit">提交</a>
@@ -112,7 +111,10 @@
                     [4,5,4,5,5,3,3,5,5,4,5,3,4,3,5,3,5,3,4,3,3,4,3,4,3,4],
                     [3,3,4,3,3,4,3,4,4,5,4,5,5,5,4,4,4,5,3,5,4,3,5,3,4,5]
                 ],
-                arrBs:['7','9','17','2','3','8','10','4','1','23','6','25','24','11','5','19','21','20','13','16','15','12','14','22','18'],
+                arrBs:[
+                    [3,4,3,4,3,4,3,3,4,3,4,5,4,5,5],
+                    [4,3,4,3,3,5,5,4,3,5,3,3,4,3,3]
+                ],
                 right:0,
                 wrong:0
             }
@@ -121,7 +123,6 @@
             $('.test_menu .item').eq(8).addClass('item_2');
             this.clickStart();
             this.suijishu();
-
         },
         updated() {
 
@@ -130,16 +131,14 @@
         methods: {
             clickStart: function () {
                 if (this.type == 'test') {
-                    // this.timeTip ="0:20";
-                    // this.leftTime=20;
-                    // this.test = 'one';
-                    // this.kuan = 550
+                    this.timeTip ="0:20";
+                    this.leftTime=20;
+                    this.test = 'one';
                 }else{
-                    // this.tempTimeStart = new Date().getTime()
-                    // this.timeTip = "3:00";
-                    // this.leftTime=180;
+                    this.tempTimeStart = new Date().getTime()
+                    this.timeTip = "3:00";
+                    this.leftTime=180;
                     this.test = 'two'
-                    // this.kuan = 800
                     $('.test_detail .box').css('height','auto')
                     $('.test_detail').css('height','auto')
                 }
@@ -172,15 +171,14 @@
                 }
             },
             //答题
-            clickQuestion:function(e,number){
-                console.log(e.target)
+            clickQuestion:function(e,ite){
                 if(!$(e.target).hasClass('duigou')){
                     $(e.target).addClass('duigou')
-                    // if(this.zhengque.indexOf(number)>=0){
-                    //     this.right++
-                    // }else{
-                    //     this.wrong++
-                    // }
+                    if(ite == 4){
+                        this.right++;
+                    }else{
+                        this.wrong++
+                    }
                 }
             },
             /**
@@ -188,30 +186,10 @@
              */
             submit: function () {
                 clearInterval(this.t)
-                this.right = 0;
-                this.wrong = 0;
                 this.t = null;
                 if(this.type=='test'){
-                    this.$router.push('/shengyaceping/rzqn/success/143?type=test')
+                    this.$router.push('/shengyaceping/rzqn/success/142?type=test')
                     return
-                }
-                for(var i=0;i<this.arrAs.length;i++){
-                    if(this.arrA[i]){
-                        if(this.arrA[i]==this.arrAs[i]){
-                            this.right++
-                        }else{
-                            this.wrong++
-                        }
-                    }
-                }
-                for(var j=0;j<this.arrBs.length;j++){
-                    if(this.arrB[j]){
-                        if(this.arrB[j]==this.arrBs[j]){
-                            this.right++
-                        }else{
-                            this.wrong++
-                        }
-                    }
                 }
                 // return;
                 let _this=this;
@@ -234,7 +212,8 @@
                         // 请求成功的结果
                         var data = res.data;
                         if (data.code == 0) {
-                            _this.saveNode(2, 144);
+                            return;
+                            _this.saveNode(2, 143);
                             _this.$router.push('/shengyaceping/rzqn/success/143')
                         } else {
                             _this.layerMsg(data.msg);
@@ -314,11 +293,11 @@
       top: 50%;
       display: block;
       content: ' ';
-      width: 58px;
-      height: 58px;
-      margin-left: -29px;
-      margin-top: -29px;
-      background: url("~@/assets/newceping/duigou.png") center center no-repeat;
+      width: 44px;
+      height: 29px;
+      margin-left: -22px;
+      margin-top: -14px;
+      background: url("~@/assets/newceping/duigou2.png") center center no-repeat;
     }
     .zhuti{
       margin: 100px auto;
@@ -374,7 +353,7 @@
         }
       }
     }
-    .zhuti1{
+    .zhuti1,.zhuti2{
       width: 1000px;
       margin: 100px auto;
       tr{
@@ -382,7 +361,9 @@
       }
     }
     .zhuti2{
-
+      td{
+        height: 160px !important;
+      }
     }
     input[type=number]{
       outline: none;
