@@ -2,7 +2,7 @@
   <div class="pc-page">
     <div class="system_main">
       <div class="titbox">
-        <p class="font"><span v-html="text"></span> <br>请单击学习策略测评进行测试。
+        <p class="font">{{text}}请单击心理健康测评进行测试。
         </p>
       </div>
       <div class="list">
@@ -18,19 +18,13 @@
             <h5 class="title">人格特性测评</h5>
           </a>
         </li>
-        <li class="item item_td item_td_over" >
+        <li class="item item_xq item_xq_over">
           <a href="javascript:;" class="box">
             <em class="icon"></em>
-            <h5 class="title">学习态度测评</h5>
+            <h5 class="title">兴趣倾向测评</h5>
           </a>
         </li>
-        <li class="item item_scale item_xq cur">
-          <a href="javascript:;" class="box">
-            <em class="icon"></em>
-            <h5 class="title">学习策略测评</h5>
-          </a>
-        </li>
-        <li class="item  item_xl">
+        <li class="item item_scale item_xl cur">
           <router-link to="/shengyaceping/xljk" class="box">
             <em class="icon"></em>
             <h5 class="title">心理健康测评</h5>
@@ -46,7 +40,7 @@
     data() {
       return {
         testType: 'type1',
-          text:'测评分为五大部分，包括：<span style="color:#FFA949">认知潜能测评、人格特性测评、学习态度测评、学习策略测评、心理健康测评。</span>',
+        text:'测评分为四大部分，包括：认知潜能测评、人格特性测评、兴趣倾向测评和心理健康测评。'
       }
     },
     mounted() {
@@ -65,7 +59,7 @@
     },
       created(){
           if(window.sessionStorage.tuance=='3'){
-              this.text="职业生涯测评分为三大部分：包括认知潜能测评、人格特性测评和学习态度测评。"
+              this.text="职业生涯测评分为三大部分：包括认知潜能测评、人格特性测评和兴趣倾向测评。"
           }
       }
   }

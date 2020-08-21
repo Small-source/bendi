@@ -153,7 +153,7 @@
         tempLength: '',
         click: 0,
         isClick: true,
-        type:this.$route.query.type,
+        type: this.$route.query.type,
         answerCount: 0,
         hideTimer: 1000
       }

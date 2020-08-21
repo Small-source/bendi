@@ -64,7 +64,7 @@
       }
     },
     mounted() {
-      $('.test_menu .item').eq(6).addClass('item_2');
+      $('.test_menu .item').eq(7).addClass('item_2');
       var _this = this;
         this.t=setInterval(function () {
             if (_this.seconds > 0) {

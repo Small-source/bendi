@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="test_test_r">
-          <img src="../../../../../assets/02.png" alt="" class="img"/>
+          <img src="../../../../../assets/test_r21.png" alt="" class="img"/>
         </div>
       </div>
     </div>

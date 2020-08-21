@@ -30,44 +30,39 @@
       <h6 class="tit">逻辑推理能力</h6>
       <p class="font">Logical Reasoning</p>
     </a>
-    <!--<a href="javascript:;" class="item">-->
-      <!--<em class="num">07</em>-->
-      <!--<h6 class="tit">动手操作能力</h6>-->
-      <!--<p class="font">Operation</p>-->
-    <!--</a>-->
     <a href="javascript:;" class="item">
       <em class="num">07</em>
+      <h6 class="tit">动手操作能力</h6>
+      <p class="font">Operation</p>
+    </a>
+    <a href="javascript:;" class="item">
+      <em class="num">08</em>
       <h6 class="tit">语言能力</h6>
       <p class="font">Linguisitic</p>
     </a>
     <a href="javascript:;" class="item">
-      <em class="num">08</em>
+      <em class="num">09</em>
       <h6 class="tit">数学能力</h6>
       <p class="font">Mathematics</p>
     </a>
-    <!--<a href="javascript:;" class="item">-->
-      <!--<em class="num">10</em>-->
-      <!--<h6 class="tit">组织管理能力</h6>-->
-      <!--<p class="font">Organizational-->
-        <!--Management</p>-->
-    <!--</a>-->
-    <!--<a href="javascript:;" class="item">-->
-      <!--<em class="num">11</em>-->
-      <!--<h6 class="tit">人际交往能力</h6>-->
-      <!--<p class="font">Interpersonal Interaction</p>-->
-    <!--</a>-->
-    <!--<a href="javascript:;" class="item">-->
-      <!--<em class="num">12</em>-->
-      <!--<h6 class="tit">美术能力</h6>-->
-      <!--<p class="font">Arts Capacity</p>-->
-    <!--</a>-->
-    <a href="javascript:;" class="item" v-if="tuance">
-      <em class="num">09</em>
-      <h6 class="tit">注意力</h6>
-      <p class="font">Attention</p>
+    <a href="javascript:;" class="item">
+      <em class="num">10</em>
+      <h6 class="tit">组织管理能力</h6>
+      <p class="font">Organizational
+        Management</p>
+    </a>
+    <a href="javascript:;" class="item">
+      <em class="num">11</em>
+      <h6 class="tit">人际交往能力</h6>
+      <p class="font">Interpersonal Interaction</p>
+    </a>
+    <a href="javascript:;" class="item">
+      <em class="num">12</em>
+      <h6 class="tit">美术能力</h6>
+      <p class="font">Arts Capacity</p>
     </a>
     <a href="javascript:;" class="item" v-if="tuance">
-      <em class="num">10</em>
+      <em class="num">13</em>
       <h6 class="tit">隐藏图形测试</h6>
       <p class="font">Hidden Graphics</p>
     </a>

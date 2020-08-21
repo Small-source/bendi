@@ -51,7 +51,7 @@
       }
     },
     mounted() {
-      $('.test_menu .item').eq(8).addClass('item_2');
+      $('.test_menu .item').eq(4).addClass('item_2');
       if (this.type == 'test') {
         sessionStorage.setItem('siTest', 1);
       }

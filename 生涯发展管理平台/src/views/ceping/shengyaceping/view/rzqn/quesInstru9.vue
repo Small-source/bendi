@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="test_test_r">
-          <img src="../../../../../assets/08.png" alt="" class="img"/>
+          <img src="../../../../../assets/test_r9.png" alt="" class="img"/>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
       return {}
     },
     mounted() {
-      $('.test_menu .item').eq(7).addClass('item_2');
+      $('.test_menu .item').eq(8).addClass('item_2');
     },
     updated() {
 

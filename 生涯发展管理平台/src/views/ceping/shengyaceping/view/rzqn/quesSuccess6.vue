@@ -8,7 +8,7 @@
           <em class="icon part_over"></em>
           <p class="tips">Part A测试完成!</p>
           <div class="btngroup">
-            <router-link class="btn btn_goon" to="/shengyaceping/rzqn/instru/8">点击继续</router-link>
+            <router-link class="btn btn_goon" to="/shengyaceping/rzqn/instru/7">点击继续</router-link>
           </div>
         </div>
       </div>

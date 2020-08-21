@@ -113,7 +113,7 @@
     mounted() {
       this.startTime = new Date().getTime();
       this.quesList();
-      $('.test_menu .item').eq(9).addClass('item_2');
+      $('.test_menu .item').eq(12).addClass('item_2');
     },
     updated() {
     },

@@ -364,9 +364,9 @@ textarea {  -webkit-appearance: none;}
 .system_main .titbox{text-align: center;}
 .system_main .cn_tit{font-size: 40px;color: #ffffff;}
 .system_main .en_tit{font-size: 20px;color: rgba(255,255,255,.7);margin-top: 25px;text-transform: uppercase;}
-.system_main .font{font-size: 20px;color: #ffffff;line-height: 36px;width: 1200px;margin:50px auto 0;}
+.system_main .font{font-size: 16px;color: #ffffff;line-height: 24px;width: 1200px;margin:50px auto 0;}
 .system_main .list{text-align: center;margin-top: 75px;}
-.system_main .item{width: 18%;display: inline-block;margin:0 1%;border:15px solid transparent;border-radius:15px;overflow: hidden;}
+.system_main .item{width: 20%;display: inline-block;margin:0 1%;border:15px solid transparent;border-radius:15px;overflow: hidden;}
 .system_main .box{background: #fff;padding:65px 0 55px;border-radius:15px;display: block;}
 .system_main .icon{width: 200px;height: 172px;display: block;margin:0 auto;}
 .system_main .title{font-size: 24px;color: #999999;font-weight: bold;margin-top: 40px;}
@@ -375,7 +375,7 @@ textarea {  -webkit-appearance: none;}
 .system_main .item_rg .icon{background: url(~@/assets//system_02.png) no-repeat center;background-size:cover;}
 .system_main .item_xq .icon{background: url(~@/assets//system_03.png) no-repeat center;background-size:cover;}
 .system_main .item_xl .icon{background: url(~@/assets//system_04.png) no-repeat center;background-size:cover;}
-.system_main .item_td .icon{background: url(~@/assets//icon_xuexitaidu.png) no-repeat center;background-size:cover;}
+
 
 .system_main .item_rz.cur .icon,.system_main .item_rz:hover .icon{background: url(~@/assets//system_01-1.png) no-repeat center;background-size:cover;}
 .system_main .item_rg.cur .icon,.system_main .item_rg:hover .icon{background: url(~@/assets//system_02-1.png) no-repeat center;background-size:cover;}
@@ -390,7 +390,7 @@ textarea {  -webkit-appearance: none;}
 .system_main .item_xq_over .icon{background: url(~@/assets//system_03-2.png) no-repeat center;background-size:cover;}
 .system_main .item_xl_over .icon{background: url(~@/assets//system_04-2.png) no-repeat center;background-size:cover;}
 
-.system_main .item_rz_over .title,.system_main .item_rg_over .title,.system_main .item_xq_over .title,.system_main .item_td_over .title,.system_main .item_xl_over .title{color: #0f2e4c;}
+.system_main .item_rz_over .title,.system_main .item_rg_over .title,.system_main .item_xq_over .title,.system_main .item_xl_over .title{color: #0f2e4c;}
 
 /*测评2*/
 .system_main .item_qn .icon{background: url(~@/assets//system_05.png) no-repeat center;background-size:180px;}

@@ -2,7 +2,7 @@
     <div class="login">
         <p class="title">账号登录</p>
         <div class="denglu">
-            <input type="text" v-model="userName"   placeholder="请输入手机号码或8位卡号">
+            <input type="text" v-model="userName" placeholder="请输入手机号码或8位卡号">
             <input  type="password" v-model="password" placeholder="请输入登录密码">
             <div class="warning">{{warning}}</div>
             <div class="button" @click="login">
