@@ -16,11 +16,7 @@
                     }
                 }).then((res)=>{
                     if(res.data.code==2000){
-                        if(res.data.data.is_career_archives!=1){
-                            this.$router.push('/login')
-                        }else{
                             this.$router.push('/careerArchives')
-                        }
                     }else{
                         window.localStorage.clear();
                         this.$router.push('/login')
